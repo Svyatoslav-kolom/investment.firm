@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import App from "./App";
 
 // Pages
-import { HomePage } from "./Pages/HomePage";
+import { HomePage } from "./Pages/HomePage/HomePage";
 import { ConsultingPage } from "./Pages/ConsultingPage";
 import { BankingPage } from "./Pages/BankingPage";
 import { CommunityPage } from "./Pages/CommunityPage";
