@@ -1,0 +1,1 @@
+export * from './CarCatalogCard.tsx';

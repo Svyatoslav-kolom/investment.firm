@@ -1,0 +1,43 @@
+import { Heading, VStack, Text, Box } from "@chakra-ui/react";
+import { PropertySlider } from "../../Molecules/PropertySlider";
+import { ImmovableInvestPropertyCard } from "../../Atoms/ImmovableInvestPropertyCard";
+import { properties } from "./properties";
+import { BlueButton } from "../../Atoms/BlueButton";
+import { useNavigate } from "react-router-dom";
+
+export const ImmovablesTopInvest = () => {
+  const navigate = useNavigate();
+
+  return (
+    <VStack
+      justifyContent="end"
+      w="100%"
+    >
+      <VStack align="start" w="100%" pb="10px" color="#F3F3F3" px={0}>
+        <Heading
+          fontSize="38px"
+          lineHeight="44px"
+          fontWeight={400}
+          textTransform="uppercase"
+          alignSelf="start"
+        >
+          Рынок недвижимости Турции: вызовы и возможности
+        </Heading>
+
+        <Text fontSize="22px">
+          Обьекты доступные для инвестирования:
+        </Text>
+      </VStack>
+
+      <PropertySlider
+        properties={properties}
+        CustomSlideComponent={ImmovableInvestPropertyCard}
+      />
+
+      <Box w="515px" h="71px" alignSelf="end" mt="20px">
+        <BlueButton title={"Смотреть объекты"} fs={18} onClick={() => navigate("catalog")} />
+      </Box>
+
+    </VStack>
+  );
+}
