@@ -32,7 +32,7 @@ export const LoanTerms = () => {
   ];
 
   return (
-    <Box height="100%" fontSize="18px" maxH="1000px">
+    <Box height="100%" textStyle="t2" maxH="1000px">
       {/* Готовность проекта */}
       <Text mb={2} fontWeight="bold">
         Готовность проекта: 55%

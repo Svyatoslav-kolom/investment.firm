@@ -55,7 +55,7 @@ export const CommunityItem: FC<Props> = ({ title, description, icon }) => (
       </Flex>
 
       <Text
-        fontSize={28}
+        fontSize="28px"
         fontWeight={200}
         color="FFF"
         textAlign="left"
@@ -66,9 +66,7 @@ export const CommunityItem: FC<Props> = ({ title, description, icon }) => (
     </Flex>
 
     <Text
-      fontSize={18}
-      fontWeight={400}
-      lineHeight="140%"
+      textStyle="t2"
       color="FFF"
       textAlign="left"
       mt={"35px"}

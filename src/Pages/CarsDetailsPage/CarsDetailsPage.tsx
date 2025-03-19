@@ -1,26 +1,20 @@
 import { Box, Heading, VStack, Text, HStack } from "@chakra-ui/react";
-import { FC } from "react";
 import { DetailsImage } from "../../components/Molecules/DetailsImage";
 import { LoanTerms } from "./LoanTerms";
 import { BlueButton } from "../../components/Atoms/BlueButton";
+import { images } from "./images";
+import useZoom from "../../zoom";
 
-interface Props { }
-
-const images = [
-  "/images/CarsCards/1.png",
-  "/images/CarsCards/2.png",
-  "/images/CarsCards/3.png",
-  "/images/CarsCards/4.png",
-];
-
-export const CarsDetailsPage: FC<Props> = () => (
-  <Box mt="170px" px="158px">
+export const CarsDetailsPage = () => {
+  const zoom = useZoom();
+  const adjustedZoom = zoom ? zoom - 0.1 : 1;
+  
+  return (
+  <Box mt="170px" px="158px" zoom={adjustedZoom}>
     <VStack>
       <VStack gap="10px" mb="20px" alignSelf={"start"}>
         <Heading
-          fontSize={"38px"}
-          fontWeight={400}
-          textTransform={"uppercase"}
+          textStyle="h1"
           alignSelf="start"
         >
           #69646400
@@ -40,9 +34,7 @@ export const CarsDetailsPage: FC<Props> = () => (
 
         <VStack maxW="530px" w="100%">
           <Heading
-            fontWeight={400}
-            fontSize="38px"
-            textTransform={"uppercase"}
+            textStyle="h1"
             alignSelf="start"
             mt="10px"
             mb="20px"
@@ -75,14 +67,15 @@ export const CarsDetailsPage: FC<Props> = () => (
         Хотите взять авто в аренду или лизинг? Если вас интересует эта модель или любая другая, мы подберем подходящий автомобиль под ваши потребности.
       </Text>
 
-      <Text  w="513px">
+      <Text w="513px">
         Хотите взять авто в аренду или лизинг? Если вас интересует эта модель или любая другая, мы подберем подходящий автомобиль под ваши потребности.
       </Text>
 
-      <Text  w="513px">
+      <Text w="513px">
         Хотите взять авто в аренду или лизинг? Если вас интересует эта модель или любая другая, мы подберем подходящий автомобиль под ваши потребности.
       </Text>
     </HStack>
 
   </Box>
 );
+}

@@ -39,7 +39,7 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
 
       {/* Заголовок и локация */}
       <VStack align="start" gap={2} mt={3}>
-        <Text fontSize="38px" fontWeight={400}>{property.title}</Text>
+        <Text textStyle="h1">{property.title}</Text>
         <HStack fontSize="sm">
           <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
@@ -52,17 +52,17 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
-            <Text fontSize="18px" fontWeight="bold">{property.price.toLocaleString()} $</Text>
+            <Text textStyle="t2"fontWeight="bold">{property.price.toLocaleString()} $</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Комиссия:</Text>
-            <Text fontSize="18px" color="#0048B4" fontWeight="bold">{property.commission}%</Text>
+            <Text textStyle="t2" color="#0048B4" fontWeight="bold">{property.commission}%</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Мин. взнос:</Text>
-            <Text fontSize="18px" fontWeight="bold">от {property.minEntry.toLocaleString()} $</Text>
+            <Text textStyle="t2" fontWeight="bold">от {property.minEntry.toLocaleString()} $</Text>
           </HStack>
         </VStack>
 
@@ -72,19 +72,19 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Этаж:</Text>
-            <Text fontSize="18px" fontWeight="bold">{property.floor}</Text>
+            <Text textStyle="t2" fontWeight="bold">{property.floor}</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Кол-во комнат:</Text>
-            <Text fontSize="18px" color="#0048B4" fontWeight="bold">
+            <Text textStyle="t2" color="#0048B4" fontWeight="bold">
               {property.rooms}
             </Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Кол-во санузлов:</Text>
-            <Text fontSize="18px" color="#0048B4" fontWeight="bold">
+            <Text textStyle="t2" color="#0048B4" fontWeight="bold">
               {property.bathrooms}
             </Text>
           </HStack>

@@ -17,7 +17,7 @@ export const LegalServicesCardTop: React.FC<InfoCardProps> = ({ text, icon }) =>
       maxW="600px"
     >
       {/* Текстовая часть */}
-      <Text fontSize="18px" fontWeight={400} color="#0048B4" lineHeight="140%">
+      <Text textStyle="t2" color="#0048B4">
         {text}
       </Text>
 

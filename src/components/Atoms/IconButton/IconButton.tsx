@@ -8,10 +8,10 @@ interface IconButtonProps {
   size?: string;
 }
 
-export const IconButton: FC<IconButtonProps> = ({ icon, label, href, size = "35px" }) => (
+export const IconButton: FC<IconButtonProps> = ({ icon, label, href }) => (
   <Link key={label} href={href} >
     <Box as="span" display="flex">
-      <img src={icon} alt={label} width={size} height={size} />
+      <img src={icon} alt={label} />
     </Box>
   </Link>
 );

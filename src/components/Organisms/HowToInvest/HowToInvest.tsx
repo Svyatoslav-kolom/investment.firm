@@ -30,7 +30,7 @@ export const HowToInvest = () => (
           position="relative"
         >
           <Image src={thirdStep} userSelect="none" pointerEvents="none" draggable="false" />
-          <Box position="absolute" top="50%" left="27%" transform="translate(-50%, -50%)" width="472px">
+          <Box position="absolute" top="50%" left="27%" transform="translate(-50%, -50%)" width="50%">
             <BlueButton title="Инвестировать" variant="light" />
           </Box>
         </MotionBox>

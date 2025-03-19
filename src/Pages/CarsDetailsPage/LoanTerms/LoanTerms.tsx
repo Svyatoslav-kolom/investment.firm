@@ -29,7 +29,7 @@ export const LoanTerms = () => {
   ];
 
   return (
-    <Box height="100%" fontSize="18px" maxH="1000px" w={"100%"}>
+    <Box height="100%" textStyle="t2" maxH="1000px" w={"100%"}>
       <Stack gap={4} h="100%" mt={3}>
         {terms.map((item, idx) => (
           <Row key={idx} label={item.label} value={item.value} />

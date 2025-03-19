@@ -1,24 +1,20 @@
 import { Box } from "@chakra-ui/react";
-import { Head } from "../../components/Organisms/Head";
-import CommunityTop from "../../assets/PageBackgrounds/CommunityPage.png";
 import { CommunityTitle } from "../../components/Molecules/CommunityTitle";
 import { CommunityCatalog } from "../../components/Organisms/CommunityCatalog";
 import { communityItems } from "./communityItems";
+import useZoom from "../../zoom";
 
-export const CommunityPage = () => (
-  <Box mb="180px">
-    <Head backgroundImage={CommunityTop} hasOverlay={false} heightPercentage={72}>
-      <Box />
-    </Head>
+export const CommunityPage = () => {
+  const zoom = useZoom();
+  return (
+  <Box mb="180px" mt="60px" zoom={zoom}>
 
-    <Box mx="158px" mt="60px">
-      <Box justifySelf="end">
-        <CommunityTitle />
-      </Box>
+    <Box justifySelf="end">
+      <CommunityTitle />
+    </Box>
 
-      <Box mt={"140px"} mx="auto">
-        <CommunityCatalog items={communityItems} />
-      </Box>
+    <Box mt={"140px"} mx="auto">
+      <CommunityCatalog items={communityItems} />
     </Box>
   </Box>
-);
+);}

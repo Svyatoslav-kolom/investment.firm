@@ -16,14 +16,12 @@ export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
   <Box>
     {/* Заголовок и иконка */}
     <Flex align="center" justify="space-between" gap="20px">
-      
+
       {/* Текстовая часть */}
       <Box>
         <Heading
-          fontSize="28px"
-          fontWeight="400"
+          textStyle="h2"
           color="#0048B4"
-          lineHeight="1.4"
           w="350px"
         >
           {service.title}
@@ -41,8 +39,8 @@ export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
       {/* Иконка */}
       <Flex
         position="relative"
-        w="100%"
-        h="100%"
+        w="100px"
+        h="100px"
         align="center"
         justify="center"
         alignSelf="end"
@@ -50,8 +48,8 @@ export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
         <Flex
           border="2px solid #0048B4"
           borderRadius="full"
-          maxW="100%"
-          maxH="100%"
+          maxW="100px"
+          maxH="100px"
           bg="white"
           aspectRatio="1 / 1" // Ровный круг
           align="center"
@@ -68,7 +66,7 @@ export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
     </Flex>
 
     {/* Описание */}
-    <VStack gap="18px" mt="35px" fontSize="18px" fontWeight="400" align="start">
+    <VStack gap="18px" mt="35px" textStyle="t2" align="start">
       <Text>{service.descriptionTitle}</Text>
 
       <List.Root gap={3} pl="22px">

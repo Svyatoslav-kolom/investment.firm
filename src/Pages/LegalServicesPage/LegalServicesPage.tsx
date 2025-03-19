@@ -1,24 +1,19 @@
 import { Box, Text } from "@chakra-ui/react";
-import { Head } from "../../components/Organisms/Head";
-import LegalServicesTop from "../../assets/PageBackgrounds/LegalServicesPage.png";
 import { LegalServiceCatalog } from "../../components/Organisms/LegalServiceCatalog";
 import { servicesData } from "./services";
 import { fadeInFrom, withMotion } from "../../utils/animations";
+import useZoom from "../../zoom";
 
 const MotionText = withMotion(Text);
 
-export const LegalServicesPage = () => (
-  <Box mb="180px">
-    <Head backgroundImage={LegalServicesTop} hasOverlay={false} heightPercentage={72}>
-      <Box />
-    </Head>
-
-    <Box mt="60px" mx="158px">
+export const LegalServicesPage = () => {
+  const zoom = useZoom();
+  return (
+    <Box mb="180px" mt="60px" zoom={zoom}>
       <MotionText
         {...fadeInFrom("right")}
         maxW="520px"
-        fontSize={18}
-        fontWeight={400}
+        textStyle="t2"
         lineHeight="140%"
         justifySelf="end"
         mb="100px"
@@ -28,5 +23,5 @@ export const LegalServicesPage = () => (
 
       <LegalServiceCatalog services={servicesData} />
     </Box>
-  </Box>
-);
+  );
+}

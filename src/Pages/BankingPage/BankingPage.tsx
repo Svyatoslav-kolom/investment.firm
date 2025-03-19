@@ -1,22 +1,19 @@
 import { Box, Text, Image, VStack, HStack } from "@chakra-ui/react";
-import { Head } from "../../components/Organisms/Head";
-import BankingTop from "../../assets/PageBackgrounds/BankingPage.png";
 import Banking from "../../assets/Banking.svg";
 import { services } from "./services";
-import { fadeInFrom, withMotion } from "../../utils/animations"; // путь к motion утилитам
+import { fadeInFrom, withMotion } from "../../utils/animations";
+import useZoom from "../../zoom";
 
 const MotionImage = withMotion(Image);
 const MotionVStack = withMotion(VStack);
 const MotionText = withMotion(Text);
 
-export const BankingPage = () => (
-  <Box mb="180px">
-    <Head backgroundImage={BankingTop} hasOverlay={false} heightPercentage={72}>
-      <Box />
-    </Head>
+export const BankingPage = () => {
+  const zoom = useZoom();
+  return (
+    <Box mb="180px" mt="60px" zoom={zoom}>
 
-    <Box mx="158px" mt="60px">
-      <Text maxW="620px" fontSize={18} fontWeight={400} lineHeight="140%" justifySelf="end">
+      <Text maxW="620px" textStyle="t2" lineHeight="140%" justifySelf="end">
         Мы предлагаем удобные, безопасные и выгодные решения для всех ваших финансовых потребностей. С нами вы сможете быстро обменивать валюту, покупать криптовалюту и отправлять деньги по всему миру с минимальными комиссиями.
       </Text>
 
@@ -73,5 +70,5 @@ export const BankingPage = () => (
         </MotionVStack>
       </HStack>
     </Box>
-  </Box>
-);
+  );
+}

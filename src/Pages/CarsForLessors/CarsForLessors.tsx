@@ -1,78 +1,17 @@
 import { Box, VStack, Text, Heading } from "@chakra-ui/react";
 import { InvestmentPoints } from "../../components/Molecules/InvestmentPoints";
-import { BlueRectangleType } from "../../Types/BlueRectangleType";
 import { BlueButton } from "../../components/Atoms/BlueButton";
 import { ImmovablesInfo } from "../../components/Molecules/ImmovablesInfo";
-import { CarsTopLessor } from "../../components/Organisms/CarsTopLessor";
 import { AboutSection } from "../../components/Organisms/AboutSection/AboutSection";
-
-const investmentSteps: BlueRectangleType[] = [
-  {
-    number: "01",
-    img: "/icons/blueRectangleIcons/cars/forLessors/1.svg",
-    title: "Заключение договора",
-    description:
-      "Клиент подписывает договор аренды с последующим выкупом",
-  },
-  {
-    number: "02",
-    img: "/icons/blueRectangleIcons/cars/forLessors/2.svg",
-    title: "Ежемесячные платежи",
-    description:
-      "Клиент вносит фиксированные суммы, которые идут в счёт полной стоимости автомобиля",
-  },
-  {
-    number: "03",
-    img: "/icons/blueRectangleIcons/cars/forLessors/3.svg",
-    title: "Владение",
-    description:
-      "После завершения выплат автомобиль переходит в собственность клиента",
-  },
-  {
-    number: "04",
-    img: "/icons/blueRectangleIcons/cars/forLessors/4.svg",
-    title: "Опционально",
-    description:
-      "Клиент может сдавать автомобиль в аренду через нашу платформу и получать дополнительный доход",
-  },
-  {
-    number: "05",
-    img: "/icons/blueRectangleIcons/cars/forLessors/5.svg",
-    title:
-      "Правила неуплаты",
-    description:
-      "Если платежи не вносятся в течение 2 месяцев, автомобиль изымается",
-  },
-];
-
-const investmentBenefits = [
-  {
-    img: "/icons/benefitsIcons/cars/lessors/1.svg",
-    title: "Стабильный пассивный доход",
-    description: "",
-  },
-  {
-    img: "/icons/benefitsIcons/cars/lessors/2.svg",
-    title: "Полное сопровождение сделки",
-    description: "",
-  },
-  {
-    img: "/icons/benefitsIcons/cars/lessors/3.svg",
-    title: "Минимальные риски и прозрачные условия, благодаря нашей платформе ",
-    description: "",
-  },
-  {
-    img: "/icons/benefitsIcons/cars/lessors/4.svg",
-    title: "Дополнительная реклама через нашу платформу увеличивает спрос",
-    description: "",
-  },
-];
+import { investmentSteps } from "./investmentSteps";
+import { investmentBenefits } from "./investmentBenefits";
+import useZoom from "../../zoom";
 
 export const CarsForLessors = () => {
+  const zoom = useZoom();
+  
   return (
-    <VStack alignItems="center" justifyContent="center">
-      <CarsTopLessor />
-
+    <VStack alignItems="center" justifyContent="center" zoom={zoom}>
       <Box px="158px" mt="140px" mb="140px">
         <Box>
           <AboutSection
@@ -102,9 +41,7 @@ export const CarsForLessors = () => {
           </Box>
 
           <Heading
-            fontSize="32px"
-            lineHeight="44px"
-            fontWeight={400}
+            textStyle="h2"
             textTransform="uppercase"
             alignSelf="start"
             w="515px"
@@ -116,8 +53,6 @@ export const CarsForLessors = () => {
 
         </Box>
       </Box>
-
-
     </VStack>
   );
 };

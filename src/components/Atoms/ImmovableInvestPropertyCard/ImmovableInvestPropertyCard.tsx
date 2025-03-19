@@ -27,7 +27,7 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
   const validatedReadiness = Math.min(100, Math.max(0, projectReadiness));
 
   const navigate = useNavigate();
-  
+
   return (
     <Box
       borderRadius="lg"
@@ -73,7 +73,7 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
               </Box>
             ))}
 
-            <BlueButton title="Подробнее" variant="outline" fs={13} onClick={() => navigate("/immovables/details")} />
+            <BlueButton title="Подробнее" variant="outline" fs="13px" onClick={() => navigate("/immovables/details")} />
           </VStack>
         </HStack>
       </VStack>

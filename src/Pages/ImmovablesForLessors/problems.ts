@@ -1,21 +1,21 @@
 export const problems = [
     {
-        img: "/icons/problems/forLessors/1.svg",
+        img: "/src/assets/icons/problems/forLessors/1.svg",
         title: "Неликвидность:",
         description: "Цены достигли максимума, и владельцы теряют значительные средства, не имея возможности продать свои объекты."
     },
     {
-        img: "/icons/problems/forLessors/2.svg",
+        img: "/src/assets/icons/problems/forLessors/2.svg",
         title: "Отсутствие безопасных инвестиций:",
         description: "Инвесторы опасаются нестабильности и рисков, что делает рынок менее привлекательным."
     },
     {
-        img: "/icons/problems/forLessors/3.svg",
+        img: "/src/assets/icons/problems/forLessors/3.svg",
         title: "Решение:",
         description: "Мы предлагаем инновационную модель, которая минимизирует риски и открывает новые горизонты для инвестиций."
     },
     {
-        img: "/icons/problems/forLessors/4.svg",
+        img: "/src/assets/icons/problems/forLessors/4.svg",
         title: "Решение:",
         description: "Мы предлагаем инновационную модель, которая минимизирует риски и открывает новые горизонты для инвестиций."
     }

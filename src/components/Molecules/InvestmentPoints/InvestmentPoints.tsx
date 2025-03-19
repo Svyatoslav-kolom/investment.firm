@@ -24,9 +24,7 @@ export const InvestmentPoints: FC<Props> = ({ info }) => (
         color="#0D0D0D"
       >
         <Text
-          fontWeight={400}
-          fontSize={32}
-          lineHeight="46px"
+          textStyle="h2"
           textTransform="uppercase"
           w="390px"
         >

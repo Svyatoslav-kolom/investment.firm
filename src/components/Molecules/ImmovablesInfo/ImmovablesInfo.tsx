@@ -20,14 +20,12 @@ interface Props {
 export const ImmovablesInfo: FC<Props> = ({ title, info, wrapId }) => {
   return (
     <HStack justifyContent="space-between" h="100%">
-      <MotionText 
+      <MotionText
         {...fadeInFrom("left")}
-         fontSize="32px" 
-         lineHeight="44px" 
-         fontWeight={400} 
-         textTransform="uppercase"
-         alignSelf="start"
-         >
+        textStyle="h2"
+        textTransform="uppercase"
+        alignSelf="start"
+      >
         {title}
       </MotionText>
 
@@ -37,7 +35,7 @@ export const ImmovablesInfo: FC<Props> = ({ title, info, wrapId }) => {
             <HStack key={index} gap="34px" w="520px">
               <Image src={problem.img} boxSize="100px" alt={problem.title} />
               <Box>
-                <Text>{problem.title} {problem.description}</Text>
+                <Text textStyle="t2">{problem.title} {problem.description}</Text>
               </Box>
             </HStack>
           ))}
@@ -48,7 +46,7 @@ export const ImmovablesInfo: FC<Props> = ({ title, info, wrapId }) => {
             <HStack key={index} gap="34px" w="520px">
               <Image src={problem.img} boxSize="100px" alt={problem.title} />
               <Box>
-                <Text>{problem.title} {problem.description}</Text>
+                <Text textStyle="t2">{problem.title} {problem.description}</Text>
               </Box>
             </HStack>
           ))}

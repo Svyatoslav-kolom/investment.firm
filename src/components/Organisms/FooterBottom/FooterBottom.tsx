@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { FooterLinks } from "../../Molecules/FooterLinks";
 
+
 export const FooterBottom = () => (
   <Box
     height="720px"

@@ -18,12 +18,10 @@ export const Footer = () => {
 
         <Image
           src={Icon}
-          height="210px"
+          height={{ base: "80px", md: "100px", lg: "120px", xl: "150px", "2xl": "210px" }}
         />
 
-        <Box w="510px">
-          <FooterRegister />
-        </Box>
+        <FooterRegister />
       </HStack>
     </Box>
   );

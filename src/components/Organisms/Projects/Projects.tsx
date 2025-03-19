@@ -9,9 +9,7 @@ export const Projects = () => {
   return (
     <VStack textAlign="center" py={10} w="100%" align="center">
       <Heading
-        textTransform="uppercase"
-        fontWeight={400}
-        fontSize="48px"
+        textStyle="h1"
         alignSelf="start"
         pb={11}
         ml={10}

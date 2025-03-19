@@ -4,26 +4,22 @@ export const FooterInfo = () => (
   <VStack
     align="flex-start"
     gap={3}
-    maxW="525px"
+    w="40%"
   >
     <Text
-      fontWeight={400}
-      fontSize={32}
-      lineHeight="45px"
+      textStyle="h2"
     >
       ОСТАЛИСЬ ВОПРОСЫ?
     </Text>
     <Text
-      fontWeight={400}
-      fontSize={18}
-      lineHeight="25px"
+      textStyle="t2"
     >
       Оставьте заявку, и наш менеджер свяжется с вами, чтобы дать подробные
       ответы и помочь вам разобраться во всех деталях!
     </Text>
     <Text
       fontWeight={400}
-      fontSize={58}
+      fontSize={{ base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "60px" }}
       lineHeight="70px"
     >
       +90 212 345 67 89

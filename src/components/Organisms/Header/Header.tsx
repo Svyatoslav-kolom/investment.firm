@@ -1,5 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
-import { IconButton } from "../../Atoms/IconButton";
+import { Box, HStack, Link, Image } from "@chakra-ui/react";
 import { HeaderLinks } from "../../Molecules/HeaderLinks";
 import { BlueButton } from "../../Atoms/BlueButton";
 import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
@@ -17,12 +16,20 @@ export const Header = () => {
       px={12}
       py={3}
       justifyContent="space-between"
+      alignItems={"center"}
+      h={{ base: "30px", md: "40px", lg: "50px", xl: "75px", "2xl": "100px" }}
+      boxSizing={"border-box"}
     >
-      <IconButton icon={HeaderIcon} label="Example" href="/" size="75px" />
+
+      <Link href="/" height={"100%"}>
+        <Image src={HeaderIcon} height={"100%"}/>
+      </Link>
+
+
       <HeaderLinks />
-      <Box w="328px">
+      <Box w="20%">
         <BlueButton title={isHome ? "Инвестируйте" : "Регистрация"} variant="outline" />
       </Box>
-    </HStack>
+    </HStack >
   );
 };

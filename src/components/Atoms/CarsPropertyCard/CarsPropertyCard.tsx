@@ -19,7 +19,7 @@ export const CarsPropertyCard: React.FC<Props> = ({
       overflow="hidden"
       bgColor="#F3F3F3"
       boxShadow="md"
-      pt="18px"
+      pt="10px"
       px="15px"
       pb="25px"
       height="100%"
@@ -32,7 +32,7 @@ export const CarsPropertyCard: React.FC<Props> = ({
           <Text fontSize="lg" color="#0048B4" fontWeight="bold">от {price} $/cут</Text>
         </HStack>
 
-        <BlueButton title="Подробнее" variant="outline" fs={18} />
+        <BlueButton title="Подробнее" variant="outline" fs="t2" />
       </VStack>
     </Box>
   );

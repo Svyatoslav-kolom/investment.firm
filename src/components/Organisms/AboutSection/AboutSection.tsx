@@ -15,10 +15,8 @@ export const AboutSection: FC<AboutProps> = ({ title, content }) => {
     <Stack direction="row" gap={7} align="start" overflow="hidden">
       <MotionText
         {...fadeInFrom("left")}
-        fontWeight={400}
-        fontSize={32}
-        lineHeight="45px"
-        maxWidth="1000px"
+        textStyle="h2"
+        width="65%"
         textTransform={"uppercase"}
       >
         {title}
@@ -26,11 +24,9 @@ export const AboutSection: FC<AboutProps> = ({ title, content }) => {
 
       <MotionVStack
         {...fadeInFrom("right")}
-        fontWeight={400}
-        fontSize={18}
-        lineHeight="24px"
+        textStyle="t2"
         gap={7}
-        maxWidth="500px"
+        width="35%"
       >
         {content.map((item, index) => (
           <div key={index}>{item}</div>

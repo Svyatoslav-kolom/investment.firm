@@ -2,19 +2,18 @@ import { Box, VStack, Text, Heading } from "@chakra-ui/react";
 import { InvestmentPoints } from "../../components/Molecules/InvestmentPoints";
 import { ImmovablesInfo } from "../../components/Molecules/ImmovablesInfo";
 import { BlueButton } from "../../components/Atoms/BlueButton";
-import { ImmovablesTopInvest } from "../../components/Organisms/ImmovablesTopInvest";
-import { Head } from "../../components/Organisms/Head";
-import ImmovablesTopBackground from "../../assets/PageBackgrounds/ImmovablesTopBackground.png";
 import { problems } from "./problems";
 import { investmentSteps } from "./investmentSteps";
 import { investmentBenefits } from "./investmentBenefits";
+import { useNavigate } from "react-router-dom";
+import useZoom from "../../zoom";
 
 export const ImmovablesForInvestments = () => {
+  const navigate = useNavigate();
+  const zoom = useZoom();
+
   return (
-    <VStack alignItems="center" justifyContent="center">
-      <Head backgroundImage={ImmovablesTopBackground}>
-        <ImmovablesTopInvest />
-      </Head>
+    <VStack alignItems="center" justifyContent="center" zoom={zoom}>
 
       <Box px="158px" mt="140px" mb="140px">
         <Box height="430px">
@@ -40,13 +39,11 @@ export const ImmovablesForInvestments = () => {
           />
 
           <Box w="515px" alignSelf="end" justifySelf="end" mt="80px">
-            <BlueButton title={"Инвестировать в недвижимость"} />
+            <BlueButton title={"Инвестировать в недвижимость"} onClick={() => navigate("/immovables/forInvestments/catalog")} />
           </Box>
 
           <Heading
-            fontSize="32px"
-            lineHeight="44px"
-            fontWeight={400}
+            textStyle="h2"
             textTransform="uppercase"
             alignSelf="start"
             w="515px"

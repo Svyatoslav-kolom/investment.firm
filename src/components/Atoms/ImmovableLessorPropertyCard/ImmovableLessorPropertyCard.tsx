@@ -37,14 +37,16 @@ export const ImmovableLessorPropertyCard: React.FC<Props> = ({
         <VStack align="start" gap={1}>
           <Text fontSize="lg">{title}</Text>
           <HStack fontSize="sm">
-            <Image src="/icons/location.svg" alt="Location" boxSize="15px"/>
+            <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
             <Text>{location}</Text>
             <Text>{area} м²</Text>
           </HStack>
         </VStack>
 
         <HStack gap={4} fontSize="12px">
-          <Image src={imageUrl} alt={title} borderRadius="md"  objectFit="contain"/>
+          <Image
+            src={imageUrl}
+            alt={title} borderRadius="md" objectFit="contain" />
 
           <VStack align="start" justifyContent="space-between" maxHeight="100%" w="100%">
             <Box>
@@ -62,7 +64,8 @@ export const ImmovableLessorPropertyCard: React.FC<Props> = ({
               <Text fontSize="lg" fontWeight="bold">{minInvestment.toLocaleString()} %</Text>
             </Box>
 
-            <BlueButton title="Подробнее" variant="outline" fs={13} />
+            <BlueButton title="Подробнее" variant="outline" fs="13px" height="50px"/>
+
           </VStack>
         </HStack>
       </VStack>

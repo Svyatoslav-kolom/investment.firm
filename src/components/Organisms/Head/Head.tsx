@@ -27,7 +27,8 @@ export const Head: FC<Props> = ({
       backgroundImage={`${overlay}url(${backgroundImage})`}
       backgroundSize="cover"
       backgroundPosition="center"
-      pb="64px"
+      pb="50px"
+      pt="64px"
       px={150}
     >
       {children}

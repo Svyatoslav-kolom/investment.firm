@@ -29,22 +29,22 @@ export const ProjectComponent: FC<Props> = ({ project, aspectRatio = 514 / 358 }
             display="flex"
             alignItems="center"
             justifyContent="center"
-            w="60px"
-            h="60px"
+            w={{ base: "22px", md: "26px", lg: "30px", xl: "40px", "2xl": "60px" }}
+            h={{ base: "22px", md: "26px", lg: "30px", xl: "40px", "2xl": "60px" }}
             borderRadius="full"
             bg="#F3F3F3"
             boxShadow="md"
             alignSelf="end"
             mt="auto"
           >
-            <Image src={arrowRight} w="40px" h="40px"/>
+            <Image src={arrowRight} boxSize={{ base: "14px", md: "16px", lg: "20px", xl: "30px", "2xl": "40px" }}/>
           </Box>
         </VStack>
       </Link>
     </Box>
 
     <Text
-      fontSize="18px"
+      textStyle="t2"
       fontWeight={600}
       color="#0048B4"
       textTransform="uppercase"

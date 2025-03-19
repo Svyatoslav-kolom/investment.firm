@@ -1,64 +1,20 @@
 import { Box, Heading, VStack, SimpleGrid, HStack } from "@chakra-ui/react";
-import { CarsCatalogTop } from "../../components/Molecules/CarsCatalogTop";
 import { BlueButton } from "../../components/Atoms/BlueButton";
 import { CarCatalogCard } from "../../components/Molecules/CarCatalogCard";
+import { carList } from "./carList";
+import useZoom from "../../zoom";
 
-// Данные по авто (пример)
-const carList = [
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/1.png",
-    horsePower: 390,
-    volume: "3,0",
-  },
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/2.png",
-    horsePower: 390,
-    volume: "3,0",
-  },
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/3.png",
-    horsePower: 390,
-    volume: "3,0",
-  },
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/1.png",
-    horsePower: 390,
-    volume: "3,0",
-  },
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/2.png",
-    horsePower: 390,
-    volume: "3,0",
-  },
-  {
-    title: "Mercedes-AMG C43 W205 White",
-    price: 120,
-    imageUrl: "/images/Property/Cars/3.png",
-    horsePower: 390,
-    volume: "3,0",
-  }
-];
-
-export const CarsCatalog = () => (
-  <Box>
-    <CarsCatalogTop />
-
-    <VStack mt="90px" mx="158px" align="start">
+export const CarsCatalog = () => {
+  const zoom = useZoom();
+  const adjustedZoom = zoom ? zoom - 0.1 : 1;
+  
+  return (
+  <Box zoom={adjustedZoom}>
+    <VStack
+      mt="90px"
+      align="start">
       <Heading
-        fontSize="38px"
-        fontWeight={400}
-        lineHeight="55.1px"
-        textTransform="uppercase"
+        textStyle="h1"
       >
         наш автопарк
       </Heading>
@@ -89,3 +45,4 @@ export const CarsCatalog = () => (
     </SimpleGrid>
   </Box>
 );
+}

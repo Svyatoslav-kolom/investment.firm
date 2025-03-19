@@ -3,7 +3,7 @@ import { Image, Box } from "@chakra-ui/react";
 
 export const HowItWorks = () => {
   return (
-    <Box px="130px">
+    <Box>
       <Image
         src="images/как это работает.svg"
       />

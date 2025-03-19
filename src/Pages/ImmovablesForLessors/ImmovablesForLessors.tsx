@@ -2,15 +2,18 @@ import { Box, VStack, Text, Heading } from "@chakra-ui/react";
 import { InvestmentPoints } from "../../components/Molecules/InvestmentPoints";
 import { ImmovablesInfo } from "../../components/Molecules/ImmovablesInfo";
 import { BlueButton } from "../../components/Atoms/BlueButton";
-import { ImmovablesTopLessors } from "../../components/Organisms/ImmovablesTopLessors";
 import { problems } from "./problems";
 import { investmentSteps } from "./investmentSteps";
 import { investmentBenefits } from "./investmentBenefits";
+import { useNavigate } from "react-router-dom";
+import useZoom from "../../zoom";
 
 export const ImmovablesForLessors = () => {
+  const navigate = useNavigate();
+  const zoom = useZoom();
+  
   return (
-    <VStack alignItems="center" justifyContent="center">
-      <ImmovablesTopLessors />
+    <VStack alignItems="center" justifyContent="center" zoom={zoom}>
 
       <Box px="158px" mt="140px" mb="140px">
         <Box height="620px">
@@ -34,13 +37,11 @@ export const ImmovablesForLessors = () => {
           />
 
           <Box w="515px" alignSelf="end" justifySelf="end" mt="80px">
-            <BlueButton title={"Арендовать жилье"} />
+            <BlueButton title={"Арендовать жилье"} onClick={() => navigate("/immovables/forLessors/catalog")} />
           </Box>
 
           <Heading
-            fontSize="32px"
-            lineHeight="44px"
-            fontWeight={400}
+            textStyle="h2"
             textTransform="uppercase"
             alignSelf="start"
             w="515px"

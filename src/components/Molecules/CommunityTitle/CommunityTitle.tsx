@@ -8,9 +8,7 @@ export const CommunityTitle = () => {
     <Stack direction="row" gap={7} align="start" overflow="hidden">
       <MotionText
         {...fadeInFrom("left")}
-        fontWeight={400}
-        fontSize={18}
-        lineHeight="140%"
+        textStyle="t2"
         maxWidth="500px"
       >
         Мы создаем пространство для роста и развития малого
@@ -22,9 +20,7 @@ export const CommunityTitle = () => {
 
       <MotionText
         {...fadeInFrom("right")}
-        fontWeight={400}
-        fontSize={18}
-        lineHeight="140%"
+        textStyle="t2"
         maxWidth="500px"
       >
         Наша цель — помочь вам нарастить и укрепить связи

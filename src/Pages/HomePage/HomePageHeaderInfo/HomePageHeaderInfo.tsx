@@ -13,17 +13,13 @@ export const HeaderInfo = () => (
     >
       <VStack align="start" gap="30px" >
         <Heading
-          fontSize={38}
-          lineHeight="55.1px"
-          fontWeight={500}
+          textStyle="h1"
         >
           Инвестируйте в лучшую альтернативу
         </Heading>
 
         <Text
-          fontSize={22}
-          lineHeight="29px"
-          fontWeight={400}
+          textStyle="t1"
         >
           Создайте портфель частных активов, таких как недвижимость,
           частные кредиты и венчурный капитал.
@@ -34,9 +30,7 @@ export const HeaderInfo = () => (
         <BlueButton title={"Зарегистрироваться"} />
 
         <Text
-          fontSize={14}
-          lineHeight="19px"
-          fontWeight={400}
+          textStyle="t3"
         >
           Начните инвестировать менее чем
           за 5 минут и всего с 10 долларов.

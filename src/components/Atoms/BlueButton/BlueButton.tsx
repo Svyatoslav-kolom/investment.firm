@@ -4,10 +4,19 @@ interface BlueButtonProps {
   title: string;
   onClick?: () => void;
   variant?: "solid" | "outline" | "light";
-  fs?: number;
+  fs?: string;
+  height?: any; // Сделаем height адаптивным
 }
 
-export const BlueButton = ({ title, onClick, variant = "solid", fs = 24 }: BlueButtonProps) => {
+const defaultHeight = { base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" };
+
+export const BlueButton = ({
+  title,
+  onClick,
+  variant = "solid",
+  fs = "t1",
+  height = defaultHeight, // Теперь правильно передаём height
+}: BlueButtonProps) => {
   const styles = {
     solid: {
       borderColor: "blue.600",
@@ -36,9 +45,8 @@ export const BlueButton = ({ title, onClick, variant = "solid", fs = 24 }: BlueB
     <Box
       as="button"
       w="100%"
-      height="100%"
-      px={6}
-      py={3}
+      h={height} // Теперь height корректно применяется
+      // px={6}
       cursor="pointer"
       fontSize={fs}
       fontWeight="bold"

@@ -14,28 +14,27 @@ export const ClientComponent = () => {
       background="linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.1))"
       backdropFilter="blur(10px)"
       justifyContent="space-between"
-      w="500px"
       px={10}
-      h="70px"
+      py={1}
     >
-      <HStack>
+      <HStack >
         {avatars.map(({ src }, index) => (
           <Avatar.Root
             key={src}
             ml={index === 0 ? 0 : -5}
             zIndex={avatars.length + index}
             border="1px solid #F3F3F3"
+            size={{ base: "sm", md: "sm", lg: "sm", xl: "md", "2xl": "xl" }}
           >
-            <Avatar.Image src={src} />
-            <Avatar.Fallback>?</Avatar.Fallback>
+            <Avatar.Image src={src}/>
           </Avatar.Root>
         ))}
       </HStack>
 
       {/* Текстовый блок */}
       <HStack gap={4}>
-        <Text fontSize="18px" fontWeight={400}>наши клиенты</Text>
-        <Text fontSize="38px" fontWeight={600}>50K +</Text>
+        <Text textStyle="t2">наши клиенты</Text>
+        <Text textStyle="h1" fontWeight={600}>50K +</Text>
       </HStack>
     </HStack>
   );

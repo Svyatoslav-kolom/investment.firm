@@ -4,8 +4,8 @@ import { BlueButton } from "../../Atoms/BlueButton";
 export const FooterRegister = () => (
   <VStack
     align="stretch"
-    w="100%"
     gap={6}
+    w="40%"
   >
     <Input
       placeholder="Имя"
@@ -13,7 +13,8 @@ export const FooterRegister = () => (
       borderRadius="full"
       py="20px"
       px="30px"
-      h="70px"
+      h={{ base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
+      textStyle="t1"
     />
     <Input
       placeholder="Телефон"
@@ -21,11 +22,12 @@ export const FooterRegister = () => (
       borderRadius="full"
       py="20px"
       px="30px"
-      h="70px"
+      h={{ base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
+      textStyle="t1"
     />
 
     <Box h="70px">
-      <BlueButton title="Перезвоните мне" /> 
+      <BlueButton title="Перезвоните мне" />
     </Box>
   </VStack>
 );
