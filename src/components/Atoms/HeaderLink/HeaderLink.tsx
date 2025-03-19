@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { HashLink } from "react-router-hash-link";
 
 interface Props {
   text: string;
@@ -6,7 +7,8 @@ interface Props {
 }
 
 export const HeaderLink: FC<Props> = ({ text, href }) => (
-  <a href={href}>
+  <HashLink smooth to={href}>
     {text}
-  </a>
+  </HashLink>
 );
+// 

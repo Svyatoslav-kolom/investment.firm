@@ -54,7 +54,7 @@ function App() {
       </Box>
 
       {/* Footer */}
-      <Box w="100vw" px="157px" >
+      <Box w="100vw" px="157px" id="footer" >
         <Footer />
       </Box>
 

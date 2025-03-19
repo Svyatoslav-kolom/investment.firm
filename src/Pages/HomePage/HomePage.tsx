@@ -8,7 +8,7 @@ import useZoom from "../../zoom";
 
 export const HomePage = () => {
   const zoom = useZoom();
-  
+
   return (
     <Box
       display="flex"
@@ -17,7 +17,7 @@ export const HomePage = () => {
       zoom={zoom}
     >
 
-      <VStack mt={150} mb={150}>
+      <VStack mt={150} mb={150} id="about">
         <AboutSection
           title="Lumina investment fund – это инвестиционная платформа, позволяющая инвестировать в объекты через механизм коллективных инвестиций"
           content={[
@@ -27,13 +27,14 @@ export const HomePage = () => {
         />
       </VStack>
 
-
-      <Projects />
+      <Box id="projects">
+        <Projects />
+      </Box>
 
 
       <Box
-
         mb="309px"
+        id="howToInvest"
       >
         <HowToInvest />
       </Box>

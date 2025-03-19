@@ -22,14 +22,15 @@ import { CarsForInvestments } from "./Pages/CarsForInvestments";
 import { CarsForLessors } from "./Pages/CarsForLessors";
 import { Box } from "@chakra-ui/react";
 import { ScrollToTop } from "./ScrollToTop";
+import { ScrollToAnchor } from "./ScrollToAnchor";
 
 
 export function Root() {
   return (
     <>
-    <ScrollToTop />
+      <ScrollToTop />
+      <ScrollToAnchor />
       <Routes>
-        {/* Главная страница */}
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
 

@@ -1,8 +1,9 @@
-import { Box, HStack, Link, Image } from "@chakra-ui/react";
+import { Box, HStack, Image } from "@chakra-ui/react";
 import { HeaderLinks } from "../../Molecules/HeaderLinks";
 import { BlueButton } from "../../Atoms/BlueButton";
 import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
 import { useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export const Header = () => {
   const location = useLocation();
@@ -20,10 +21,10 @@ export const Header = () => {
       h={{ base: "30px", md: "40px", lg: "50px", xl: "75px", "2xl": "100px" }}
       boxSizing={"border-box"}
     >
+      <HashLink smooth to="/#" style={{ height: "100%" }}>
+        <Image src={HeaderIcon} height="100%" />
+      </HashLink>
 
-      <Link href="/" height={"100%"}>
-        <Image src={HeaderIcon} height={"100%"}/>
-      </Link>
 
 
       <HeaderLinks />
