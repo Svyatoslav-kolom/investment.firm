@@ -55,8 +55,7 @@ export const CommunityItem: FC<Props> = ({ title, description, icon }) => (
       </Flex>
 
       <Text
-        fontSize="28px"
-        fontWeight={200}
+        textStyle="h2"
         color="FFF"
         textAlign="left"
         alignSelf="start"

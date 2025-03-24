@@ -12,11 +12,11 @@ interface AboutProps {
 
 export const AboutSection: FC<AboutProps> = ({ title, content }) => {
   return (
-    <Stack direction="row" gap={7} align="start" overflow="hidden">
+    <Stack direction={{base: "column", md:"row"}} gap={7} align="start" w={"100%"}>
       <MotionText
         {...fadeInFrom("left")}
         textStyle="h2"
-        width="65%"
+        width={{base:"100%", md: "65%"}}
         textTransform={"uppercase"}
       >
         {title}
@@ -24,9 +24,9 @@ export const AboutSection: FC<AboutProps> = ({ title, content }) => {
 
       <MotionVStack
         {...fadeInFrom("right")}
-        textStyle="t2"
+        textStyle="t1"
         gap={7}
-        width="35%"
+        width={{base:"100%", md: "35%"}}
       >
         {content.map((item, index) => (
           <div key={index}>{item}</div>

@@ -31,7 +31,8 @@ export const ImmovablesTopInvest = () => {
         CustomSlideComponent={ImmovableInvestPropertyCard}
       />
 
-      <Box w="515px" h="71px" alignSelf="end" mt="20px">
+
+      <Box w={{ base: "100%", md: "515px" }} h="71px" alignSelf="end" mt="25px">
         <BlueButton title={"Смотреть объекты"} fs="t2" onClick={() => navigate("/immovables/forInvestments/catalog")} />
       </Box>
 

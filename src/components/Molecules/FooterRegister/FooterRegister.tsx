@@ -5,7 +5,7 @@ export const FooterRegister = () => (
   <VStack
     align="stretch"
     gap={6}
-    w="40%"
+    w={{ base: "90%", md: "40%" }} // на мобильных ширина 100%, на ПК 40%
   >
     <Input
       placeholder="Имя"
@@ -13,7 +13,7 @@ export const FooterRegister = () => (
       borderRadius="full"
       py="20px"
       px="30px"
-      h={{ base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
+      h={{ base: "50px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
       textStyle="t1"
     />
     <Input
@@ -22,7 +22,7 @@ export const FooterRegister = () => (
       borderRadius="full"
       py="20px"
       px="30px"
-      h={{ base: "25px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
+      h={{ base: "50px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
       textStyle="t1"
     />
 

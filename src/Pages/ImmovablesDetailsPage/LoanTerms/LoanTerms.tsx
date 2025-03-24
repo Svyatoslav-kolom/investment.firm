@@ -4,7 +4,7 @@ import { Box, Text, Progress, Stack, Flex } from "@chakra-ui/react";
 const Row = ({ label, value, isLongText = false }: { label: string; value: string; isLongText?: boolean }) => (
   <Flex justify="space-between" align={isLongText ? "flex-start" : "center"}>
     <Text whiteSpace="nowrap">{label}</Text>
-    <Text fontWeight="medium" ml={isLongText ? 1 : 0}>
+    <Text fontWeight="medium" ml={isLongText ? 10 : 0}>
       {value}
     </Text>
   </Flex>

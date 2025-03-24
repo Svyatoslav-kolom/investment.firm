@@ -5,17 +5,20 @@ import useZoom from "../../zoom";
 
 export const ImmivablesLessorCatalog = () => {
   const zoom = useZoom();
-  
+
   return (
-    <Box mt="200px" px="160px" pb="80px" w="100%" zoom={zoom}>
+    <Box mt={{base:"70px", md: "200px"}} pb={{base:"20px", md: "80px"}} w="100%" zoom={zoom}>
       <VStack color="#111111" gap={2} alignItems="start" pb="20px">
-        <Heading fontWeight="500" fontSize="48px" lineHeight="55.1px">
+        <Heading textStyle={"h1"} width="100%" textTransform={"uppercase"}>
           Каталог недвижимости
         </Heading>
-        <Text>Объекты, доступные для инвестирования:</Text>
+
+        <Text textStyle={"t1"}>
+          Объекты, доступные для инвестирования:
+        </Text>
       </VStack>
 
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap="30px" mt={6} w="100%">
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap="30px" w="100%">
         {properties.map((property) => (
           <LessorCard key={property.id} property={property} />
         ))}

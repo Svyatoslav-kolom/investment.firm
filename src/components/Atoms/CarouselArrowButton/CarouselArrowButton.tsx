@@ -16,15 +16,15 @@ export const CarouselArrowButton = forwardRef<HTMLButtonElement, CarouselArrowBu
         onClick={onClick}
         aria-label={direction === "next" ? "Next" : "Previous"}
         position="absolute"
-        {...(direction === "next" ? { right: "-70px" } : { left: "-70px" })}
+        {...(direction === "next" ? { right: {base:"-20px", md:"70px"} } : { left: {base:"-20px", md:"-70px"}  })}
         top="50%"
         transform="translateY(-50%)"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        width="60px"
-        height="60px"
-        borderRadius="full"
+        width={{ base: "40px", md: "60px" }} // На мобильных устройствах ширина 40px
+        height={{ base: "40px", md: "60px" }} // Высота также 40px на мобильных устройствах
+        borderRadius="50%" // Обеспечивает круглую форму
         backgroundColor="#F9FAFF80"
         boxShadow="md"
         alignSelf="end"
@@ -33,8 +33,8 @@ export const CarouselArrowButton = forwardRef<HTMLButtonElement, CarouselArrowBu
       >
         <Image
           src={rightArrow}
-          width="40px"
-          height="40px"
+          width={{ base: "20px", md: "40px" }}
+          height={{ base: "20px", md: "40px" }}
           transform={direction === "prev" ? "scaleX(-1)" : "none"}
         />
       </IconButton>

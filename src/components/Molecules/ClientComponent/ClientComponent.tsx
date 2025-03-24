@@ -14,8 +14,11 @@ export const ClientComponent = () => {
       background="linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.1))"
       backdropFilter="blur(10px)"
       justifyContent="space-between"
+      maxW={"450px"}
+      w={"100%"}
       px={10}
-      py={1}
+      py={3}
+      color="black"
     >
       <HStack >
         {avatars.map(({ src }, index) => (

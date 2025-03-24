@@ -5,7 +5,7 @@ const MotionText = withMotion(Text);
 
 export const CommunityTitle = () => {
   return (
-    <Stack direction="row" gap={7} align="start" overflow="hidden">
+    <Stack direction={{base: "column", md: "row"}} gap={7} align="start" overflow="hidden">
       <MotionText
         {...fadeInFrom("left")}
         textStyle="t2"

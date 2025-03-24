@@ -2,7 +2,7 @@ import { useBreakpointValue } from "@chakra-ui/react";
 
 const useZoom = () => {
   const zoom = useBreakpointValue({
-    base: 0.8,
+    base: 1,
     sm: 0.85,
     md: 0.9,
     lg: 0.6,

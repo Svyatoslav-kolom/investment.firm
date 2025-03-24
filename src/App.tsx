@@ -12,11 +12,12 @@ import { CommunityPageTop } from "./components/Top/CommunityPageTop";
 import { LegalServicesTop } from "./components/Top/LegalServicesTop";
 import { ImmovablesForInvestmentsTop } from "./components/Top/ImmovablesForInvestmentsTop";
 import { ImmovablesTopLessors } from "./components/Top/ImmovablesTopLessors";
-import { CarsCatalogTop } from "./components/Top/CarsCatalogTop";
 import { CarsTopInvestment } from "./components/Top/CarsTopInvestment";
 import { CarsTopLessor } from "./components/Top/CarsTopLessor";
 import { ImmovablesTop } from "./components/Top/ImmovablesTop";
 import { CarsTop } from "./components/Top/CarsTop";
+import { HeaderMobile } from "./components/Organisms/HeaderMobile";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 // Объект с Top-компонентами
 const topComponents: Record<string, React.FC> = {
@@ -29,37 +30,49 @@ const topComponents: Record<string, React.FC> = {
   "/immovables/forInvestments": ImmovablesForInvestmentsTop,
   "/immovables/forLessors": ImmovablesTopLessors,
   "/auto": CarsTop,
-  "/auto/catalog": CarsCatalogTop,
   "/auto/forInvestments": CarsTopInvestment,
   "/auto/forLessors": CarsTopLessor,
 };
 
 function App() {
   const location = useLocation();
-  const TopComponent = topComponents[location.pathname];
+  const isMdOrLarger = useBreakpointValue({ base: false, md: true });
+  const TopComponent = 
+    location.pathname === "/auto/catalog" && !isMdOrLarger
+      ? null
+      : topComponents[location.pathname];
 
   return (
     <VStack m={0} p={0} overflowX="hidden">
       {/* Фиксированный Header */}
-      <Box position="absolute" top="40px" left="112px" right="112px" zIndex="10">
-        <Header />
+      <Box
+        position="absolute"
+        top={{ base: "0", md: "40px" }}
+        left={{ base: "0", md: "112px" }}
+        right={{ base: "0", md: "112px" }}
+      >
+        {window.innerWidth < 768 ? (
+          <HeaderMobile isHome={true} />
+        ) : (
+          <Header isHome={true} />
+        )}
       </Box>
 
       {/* Отображение нужного Top-компонента */}
       {TopComponent && <TopComponent />}
 
       {/* Контент с отступами */}
-      <Box px="157px">
+      <Box px={{ base: "20px", md: "157px" }}>
         <Outlet />
       </Box>
 
       {/* Footer */}
-      <Box w="100vw" px="157px" id="footer" >
+      <Box w="100vw" px={{ base: "20px", md: "157px" }} id="footer" >
         <Footer />
       </Box>
 
       {/* Footer Bottom */}
-      <Box mt="140px" w="100vw" >
+      <Box mt={{ base: "50px", md: "140px" }} w="100vw" >
         <FooterBottom />
       </Box>
     </VStack>

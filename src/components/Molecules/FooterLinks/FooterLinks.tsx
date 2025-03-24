@@ -7,12 +7,15 @@ export const FooterLinks = () => {
       display="flex"
       w="100%"
       justifyContent="center"
-      gap="350px"
+      gap="50px" // Уменьшил gap для мобильных
+      flexDirection={{ base: "column", md: "row" }} // Меняем направление на мобильных устройствах
       fontWeight={400}
       fontSize={18}
       lineHeight="19px"
+      mx={{ base: "20px", md: "auto" }}
+      textStyle="t1"
     >
-      <VStack align="flex-start" gap={3}>
+      <VStack align="flex-start" gap={3} >
         <Text mb={3}>Полезные ссылки</Text>
         <RouterLink to="/#about">О нас</RouterLink>
         <RouterLink to="/#projects">Проекты</RouterLink>
@@ -20,6 +23,7 @@ export const FooterLinks = () => {
         <RouterLink to="/#contact">Контакты</RouterLink>
         <RouterLink to="/#invest">Как инвестировать</RouterLink>
       </VStack>
+
       <VStack align="flex-start" gap={3}>
         <Text mb={3}>Юридический</Text>
         <RouterLink to="/#terms">Условия использования</RouterLink>

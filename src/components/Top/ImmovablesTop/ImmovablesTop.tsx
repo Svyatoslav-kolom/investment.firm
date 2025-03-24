@@ -1,4 +1,4 @@
-import { HStack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { ClientComponent } from "../../Molecules/ClientComponent";
 import ImmovablesTopBackground from "../../../assets/PageBackgrounds/ImmovablesTopBackground.png";
 
@@ -10,9 +10,7 @@ interface ImmovablesTopProps {
 }
 
 export const ImmovablesTop: FC<ImmovablesTopProps> = () => (
-  <HStack
-    alignItems="end"
-    justifyContent="space-between"
+  <Stack
     h="100vh"
     w="100vw"
     backgroundImage={`
@@ -21,10 +19,16 @@ export const ImmovablesTop: FC<ImmovablesTopProps> = () => (
      `}
     backgroundSize="cover"
     backgroundPosition="center"
-    pb="64px"
-    px={150}
+    pb={{base: "10px", md: "64px"}}
+    px={{ base: "16px", md: "40px", lg: "150px" }}
+    direction={{ base: "column", md: "row" }}
+    alignItems={{ base: "center", md: "flex-end" }}
+    justifyContent={{ base: "flex-end", md: "space-between" }}
   >
     <ImmovablesTopInfo />
-    <ClientComponent />
-  </HStack>
+    <Box w="100%" display={{ base: "none", md: "block" }}>
+      <ClientComponent />
+    </Box>
+
+  </Stack>
 );

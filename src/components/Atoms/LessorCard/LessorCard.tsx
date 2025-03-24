@@ -1,4 +1,4 @@
-import { Box, VStack, Text, HStack, Image } from "@chakra-ui/react";
+import { Box, VStack, Text, Stack, Image } from "@chakra-ui/react";
 import { BlueButton } from "../../Atoms/BlueButton";
 import { useNavigate } from "react-router-dom";
 
@@ -25,10 +25,10 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
     <Box
       key={property.id}
       w="100%"
-      p="40px"
-      pb="50px"
+      p={{ base: "20px", md: "40px" }}
+      pb={{ base: "25px", md: "50px" }}
       boxShadow="0px 4px 4px 0px #00000040"
-      borderRadius="50px"
+      borderRadius={{ base: "30px", md: "50px" }}
       border="1px solid #00000040"
       position="relative"
     >
@@ -40,62 +40,62 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
       {/* Заголовок и локация */}
       <VStack align="start" gap={2} mt={3}>
         <Text textStyle="h1">{property.title}</Text>
-        <HStack fontSize="sm">
+        <Stack direction={{ base: "column", md: "row" }} fontSize="sm">
           <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
           <Text>{property.area} м²</Text>
-        </HStack>
+        </Stack>
       </VStack>
 
       {/* Блок с характеристиками */}
-      <HStack mt={3} gap="14px" w="100%" align="stretch">
+      <Stack direction={{ base: "column", md: "row" }} mt={3} gap={{ base: "8px", md: "14px" }} w="100%">
         <VStack w="100%" align="start">
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
-            <Text textStyle="t2"fontWeight="bold">{property.price.toLocaleString()} $</Text>
-          </HStack>
+            <Text textStyle="t2" fontWeight="bold">{property.price.toLocaleString()} $</Text>
+          </Stack>
 
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Комиссия:</Text>
             <Text textStyle="t2" color="#0048B4" fontWeight="bold">{property.commission}%</Text>
-          </HStack>
+          </Stack>
 
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Мин. взнос:</Text>
             <Text textStyle="t2" fontWeight="bold">от {property.minEntry.toLocaleString()} $</Text>
-          </HStack>
+          </Stack>
         </VStack>
 
-        {/* Разделительная линия */}
-        <Box width="2px" bg="#0048B4" />
+        {/* Разделительная линия только для desktop */}
+        <Box display={{ base: "none", md: "block" }} width="2px" bg="#0048B4" />
 
         <VStack w="100%" align="start">
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Этаж:</Text>
             <Text textStyle="t2" fontWeight="bold">{property.floor}</Text>
-          </HStack>
+          </Stack>
 
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Кол-во комнат:</Text>
             <Text textStyle="t2" color="#0048B4" fontWeight="bold">
               {property.rooms}
             </Text>
-          </HStack>
+          </Stack>
 
-          <HStack justifyContent="space-between" w="100%">
+          <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Кол-во санузлов:</Text>
             <Text textStyle="t2" color="#0048B4" fontWeight="bold">
               {property.bathrooms}
             </Text>
-          </HStack>
+          </Stack>
         </VStack>
-      </HStack>
+      </Stack>
 
       {/* Кнопки */}
-      <HStack mt={4}>
+      <Stack direction={{ base: "column", md: "row" }} mt={4} gap={2} w="100%">
         <BlueButton title="Купить м²" />
-        <BlueButton title="Подробнее" variant="outline"  onClick={() => navigate("/immovables/details")} />
-      </HStack>
+        <BlueButton title="Подробнее" variant="outline" onClick={() => navigate("/immovables/details")} />
+      </Stack>
     </Box>
   );
 };

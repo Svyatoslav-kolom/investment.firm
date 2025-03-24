@@ -1,48 +1,60 @@
-import { Box, Heading, VStack, SimpleGrid, HStack } from "@chakra-ui/react";
-import { BlueButton } from "../../components/Atoms/BlueButton";
-import { CarCatalogCard } from "../../components/Molecules/CarCatalogCard";
+// CarsCatalog.js
+import { Box, Heading, SimpleGrid, Image, HStack } from "@chakra-ui/react";
+import { useState } from "react";
 import { carList } from "./carList";
 import useZoom from "../../zoom";
+import { CarCatalogCard } from "../../components/Molecules/CarCatalogCard";
+import { MobileFilter } from "../../components/Molecules/MobileFilter";
+import { DesktopFilter } from "../../components/Molecules/DesktopFilter";
+import FilterIcon from "../../assets/icons/filterIcon.svg";
 
 export const CarsCatalog = () => {
   const zoom = useZoom();
   const adjustedZoom = zoom ? zoom - 0.1 : 1;
-  
+
+  const [isMobileFilterOpen, setMobileFilterOpen] = useState(false);
+
+  const openMobileFilter = () => setMobileFilterOpen(true);
+  const closeMobileFilter = () => setMobileFilterOpen(false);
+
   return (
-  <Box zoom={adjustedZoom}>
-    <VStack
-      mt="90px"
-      align="start">
-      <Heading
-        textStyle="h1"
+    <Box zoom={adjustedZoom} position="relative">
+      <HStack
+        mt={{ base: "70px", md: "90px" }}
+        mb={{ base: "30px", md: "80px" }}
+        justifyContent="space-between"
       >
-        наш автопарк
-      </Heading>
+        <Heading textStyle="h1">наш автопарк</Heading>
 
-      {/* Фильтры */}
-      <HStack gap="30px" w="100%" mt="80px">
-        <BlueButton title="Все" variant="light" />
-        <BlueButton title="СпортКар" />
-        <BlueButton title="Бизнес" variant="light" />
-        <BlueButton title="Внедорожники" variant="light" />
-        <BlueButton title="Комфорт" variant="light" />
-      </HStack>
-
-      {/* Грид карточек авто */}
-    </VStack>
-
-    <SimpleGrid columns={[1, 2, 3]} gap="30px" mt="30px" w="100%" px="158px">
-      {carList.map((car, idx) => (
-        <CarCatalogCard
-          key={idx}
-          title={car.title}
-          price={car.price}
-          imageUrl={car.imageUrl}
-          horsePower={car.horsePower}
-          volume={car.volume}
+        <Image
+          src={FilterIcon}
+          display={{ base: "block", md: "none" }}
+          onClick={openMobileFilter}
+          cursor="pointer"
+          alt="Open Filter"
         />
-      ))}
-    </SimpleGrid>
-  </Box>
-);
-}
+
+      </HStack>
+      
+      <MobileFilter isOpen={isMobileFilterOpen} onClose={closeMobileFilter} />
+
+
+      <Box display={{ base: "none", md: "flex" }}>
+        <DesktopFilter />
+      </Box>
+
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="30px" w="100%">
+        {carList.map((car, idx) => (
+          <CarCatalogCard
+            key={idx}
+            title={car.title}
+            price={car.price}
+            imageUrl={car.imageUrl}
+            horsePower={car.horsePower}
+            volume={car.volume}
+          />
+        ))}
+      </SimpleGrid>
+    </Box>
+  );
+};

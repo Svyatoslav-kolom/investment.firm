@@ -15,7 +15,7 @@ export const CarsTopInvest = () => {
         alignSelf="start"
         width="100%"
         gap={10}
-        w="500px"
+        w={{ md: "500px" }}
         color="#F3F3F3"
         mt="auto"
       >

@@ -22,19 +22,18 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
     <Box
       key={property.id}
       w="100%"
-      p="40px"
-      pb="50px"
+      p={{ base: "20px", md: "40px" }}
+      pb={{ base: "25px", md: "50px" }}
       boxShadow="0px 4px 4px 0px #00000040"
-      borderRadius="50px"
+      borderRadius={{ base: "30px", md: "50px" }}
       border="1px solid #00000040"
       position="relative"
     >
-      {/* Бейдж статуса вынесен за пределы блока с фильтром */}
       <Box
         position="absolute"
-        top="65px"
-        left="65px"
-        zIndex="2"  // Устанавливаем поверх изображения
+        top={{base:"5%", md:"65px"}}
+        left={{base:"10%", md:"65px"}}
+        zIndex="2"
         borderRadius="full"
         backgroundColor={property.isReady ? "#DF0000" : "#1CA242"}
         color="white"
@@ -47,13 +46,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         {property.isReady ? "Сбор завершен" : "Идет сбор средств"}
       </Box>
 
-      {/* Картинка с фильтром */}
-      <Box
-        w="100%"
-        borderRadius="md"
-        overflow="hidden"
-        position="relative"
-      >
+      <Box w="100%" borderRadius="md" overflow="hidden" position="relative">
         <Image
           src={property.image}
           alt={property.title}
@@ -63,9 +56,8 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         />
       </Box>
 
-      {/* Заголовок и локация */}
       <VStack align="start" gap={2} mt={3}>
-        <Text textStyle="h2" >{property.title}</Text>
+        <Text textStyle="h2">{property.title}</Text>
         <HStack fontSize="sm">
           <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
@@ -73,7 +65,6 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         </HStack>
       </VStack>
 
-      {/* Прогресс готовности */}
       <Text fontWeight="medium" mt={2}>Готовность проекта: {property.readiness}%</Text>
       <Progress.Root value={property.readiness} w="100%" shape="rounded">
         <Progress.Track>
@@ -81,8 +72,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         </Progress.Track>
       </Progress.Root>
 
-      {/* Блок с характеристиками */}
-      <HStack mt={3} gap="14px" w="100%" align="stretch">
+      <HStack mt={3} gap="14px" w="100%" align="stretch" flexDirection={{ base: "column", md: "row" }}>
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
@@ -100,8 +90,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
           </HStack>
         </VStack>
 
-        {/* Разделительная линия */}
-        <Box width="2px" bg="#0048B4" />
+        <Box width="2px" bg="#0048B4" display={{ base: "none", md: "block" }} />
 
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
@@ -118,8 +107,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         </VStack>
       </HStack>
 
-      {/* Кнопки */}
-      <HStack mt={4}>
+      <HStack mt={4} flexDirection={{ base: "column", md: "row" }}>
         <BlueButton title="Купить м²" />
         <BlueButton title="Подробнее" variant="outline" />
       </HStack>

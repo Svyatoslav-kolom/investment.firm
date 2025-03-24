@@ -1,47 +1,55 @@
-import { HStack, Text, Box, VStack } from "@chakra-ui/react";
+import { Stack, Text, Box, VStack, useBreakpointValue } from "@chakra-ui/react";
 import { FC } from "react";
 import { BlueRectangleType } from "../../../Types/BlueRectangleType";
 import { BlueRectangle } from "../../Atoms/BlueRectangle";
 import { fadeInFrom, withMotion } from "../../../utils/animations";
 
-const MotionHStack = withMotion(HStack);
+const MotionStack = withMotion(Stack);
 
 interface Props {
   info: BlueRectangleType[]
 }
 
-export const InvestmentPoints: FC<Props> = ({ info }) => (
-  <VStack gap="30px" alignItems="center" justify="center">
+export const InvestmentPoints: FC<Props> = ({ info }) => {
+  const zoom = useBreakpointValue({
+    base: 0.7,
+    md: 1,
+  });
 
-    <MotionHStack gap="30px" {...fadeInFrom("left")}>
-      <Box
-        w="510px"
-        h="350px"
-        bg="#DDEAFF"
-        borderRadius="3xl"
-        p="40px"
-        gap="50px"
-        color="#0D0D0D"
-      >
-        <Text
-          textStyle="h2"
-          textTransform="uppercase"
-          w="390px"
+  return (
+    <VStack gap="30px" alignItems="center" justify="center" maxW={{ base: "350px", md: "none" }}>
+
+      <MotionStack gap="30px" {...fadeInFrom("left")} direction={{ base: "column", md: "row" }}>
+        <Box
+          w={{ base: "100%", md: "510px" }}
+          h="350px"
+          bg="#DDEAFF"
+          borderRadius="3xl"
+          p="40px"
+          gap="50px"
+          color="#0D0D0D"
+          zoom={zoom}
         >
-          Простая и эффективная схема инвестиций
-        </Text>
-      </Box>
+          <Text
+            textStyle="h2"
+            textTransform="uppercase"
+            w="390px"
+          >
+            Простая и эффективная схема инвестиций
+          </Text>
+        </Box>
 
-      {info.slice(0, 2).map((item, index) => (
-        <BlueRectangle key={index} {...item} />
-      ))}
-    </MotionHStack>
+        {info.slice(0, 2).map((item, index) => (
+          <BlueRectangle key={index} {...item} />
+        ))}
+      </MotionStack>
 
-    <MotionHStack gap="30px" {...fadeInFrom("right")}>
-      {info.slice(2).map((item, index) => (
-        <BlueRectangle key={index} {...item} />
-      ))}
-    </MotionHStack>
+      <MotionStack gap="30px" {...fadeInFrom("right")} direction={{ base: "column", md: "row" }}>
+        {info.slice(2).map((item, index) => (
+          <BlueRectangle key={index} {...item} />
+        ))}
+      </MotionStack>
 
-  </VStack>
-);
+    </VStack>
+  );
+}

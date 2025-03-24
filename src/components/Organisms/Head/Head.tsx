@@ -1,4 +1,4 @@
-import { HStack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react"
 import { FC, ReactNode } from "react";
 
 interface Props {
@@ -19,19 +19,21 @@ export const Head: FC<Props> = ({
     : "";
 
   return (
-    <HStack
-      alignItems="end"
-      justifyContent="space-between"
+    <Stack
+      direction={{ base: "column", md: "row" }}
+      alignItems={{base:"center", md: "flex-end"}}
+      justifyContent={{ base: "flex-end", md: "space-between" }}
+      gap={{ base: "20px", md: "none" }}
       h={`${heightPercentage}vh`} // Используем настраиваемую высоту
       w="100vw"
       backgroundImage={`${overlay}url(${backgroundImage})`}
       backgroundSize="cover"
       backgroundPosition="center"
-      pb="50px"
+      pb={{ base: "10px", md: "30px", "2xl": "64px" }}
       pt="64px"
-      px={150}
+      px={{ base: "16px", md: "40px", lg: "150px" }}
     >
       {children}
-    </HStack>
+    </Stack>
   );
 };

@@ -15,7 +15,7 @@ export const CarsTopInvestment = () => {
         <VStack
           align="start"
           gap={10}
-          w="500px"
+          w={{ md: "500px" }}
           color="#F3F3F3"
         >
           <VStack align="start" gap="30px" >

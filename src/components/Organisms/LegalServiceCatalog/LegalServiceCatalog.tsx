@@ -20,7 +20,7 @@ export const LegalServiceCatalog: FC<Props> = ({ services }) => (
       const isEvenRow = Math.floor(index / 3) % 2 === 0;
 
       return (
-        <MotionBox key={index}  {...fadeInFrom(isEvenRow ? "left" : "right")}>
+        <MotionBox key={index}  {...fadeInFrom(isEvenRow ? "left" : "right")} w={{ base: "350px", md: "100%" }}>
           <LegalServiceItem  service={service} />
         </MotionBox>
       )

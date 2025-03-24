@@ -9,11 +9,11 @@ import useZoom from "../../zoom";
 
 export const CarsForLessors = () => {
   const zoom = useZoom();
-  
+
   return (
-    <VStack alignItems="center" justifyContent="center" zoom={zoom}>
-      <Box px="158px" mt="140px" mb="140px">
-        <Box>
+    <VStack alignItems="center" justifyContent="center" zoom={zoom} mx={{ base: "20px", md: "none" }}>
+      <Box px={{ base: "20px", md: "158px" }} mt={{ base: "40px", md: "140px" }} mb={{ base: "40px", md: "140px" }}>
+        <Box height={{ base: "auto", md: "620px" }}>
           <AboutSection
             title="Почему лизинг авто недоступен: проблемы и пути решения"
             content={[
@@ -22,35 +22,32 @@ export const CarsForLessors = () => {
           />
         </Box>
 
-
-        <Box mt="170px" alignSelf="center">
+        <Box mt={{ base: "80px", md: "170px" }} alignSelf="center">
           <InvestmentPoints info={investmentSteps} />
         </Box>
 
-        <Box mt="170px" alignSelf="center">
+        <Box mt={{ base: "80px", md: "170px" }} alignSelf="center">
           <ImmovablesInfo
-            title={
-              <Text>Почему это выгодно <br /> именно вам?</Text>
-            }
+            title={<Text>Почему это выгодно <br /> именно вам?</Text>}
             info={investmentBenefits}
             wrapId={2}
           />
 
-          <Box w="515px" alignSelf="end" justifySelf="end" mt="80px">
+          <Box w={{ base: "100%", md: "515px" }} justifySelf="end" mt="40px">
             <BlueButton title={"Оформить лизинг"} />
           </Box>
 
           <Heading
             textStyle="h2"
             textTransform="uppercase"
-            alignSelf="start"
-            w="515px"
-            mt="80px"
+            alignSelf="center"
+            w={{ base: "100%", md: "515px" }}
+            mt="40px"
+            textAlign="left"
           >
             С нами ваши средства работают эффективно,
             а вы — получаете уверенность в завтрашнем дне.
           </Heading>
-
         </Box>
       </Box>
     </VStack>

@@ -22,7 +22,7 @@ export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
         <Heading
           textStyle="h2"
           color="#0048B4"
-          w="350px"
+          maxW="350px"
         >
           {service.title}
         </Heading>

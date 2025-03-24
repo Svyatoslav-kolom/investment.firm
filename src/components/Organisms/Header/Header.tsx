@@ -1,36 +1,38 @@
 import { Box, HStack, Image } from "@chakra-ui/react";
+import { HashLink } from "react-router-hash-link";
+import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
 import { HeaderLinks } from "../../Molecules/HeaderLinks";
 import { BlueButton } from "../../Atoms/BlueButton";
-import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
-import { useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
-export const Header = () => {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+interface HeaderProps {
+  isHome: boolean;
+}
 
-  return (
-    <HStack
-      borderRadius="full"
-      background="linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.1))"
-      backdropFilter="blur(10px)"
-      px={12}
-      py={3}
-      justifyContent="space-between"
-      alignItems={"center"}
-      h={{ base: "30px", md: "40px", lg: "50px", xl: "75px", "2xl": "100px" }}
-      boxSizing={"border-box"}
-    >
-      <HashLink smooth to="/#" style={{ height: "100%" }}>
-        <Image src={HeaderIcon} height="100%" />
-      </HashLink>
+export const Header: React.FC<HeaderProps> = ({ isHome }) => (
+  <HStack
+    borderRadius="full"
+    background={{ base: "none", md: "linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.1))" }}
+    backdropFilter={{ base: "none", md: "blur(10px)" }}
+    px={{ base: 4, md: 12 }}
+    py={3}
+    justifyContent="space-between"
+    alignItems="center"
+    h={{ base: "50px", md: "75px", xl: "100px" }}
+    w="100%"
+    position="relative"
+  >
+    <HashLink smooth to="/#">
+      <Image src={HeaderIcon} height={{ base: "30px", md: "70px" }} alt="Logo" />
+    </HashLink>
 
-
-
+    <Box>
       <HeaderLinks />
-      <Box w="20%">
-        <BlueButton title={isHome ? "Инвестируйте" : "Регистрация"} variant="outline" />
-      </Box>
-    </HStack >
-  );
-};
+    </Box>
+
+
+    <Box w="20%">
+      <BlueButton title={isHome ? "Инвестируйте" : "Регистрация"} variant="outline" />
+    </Box>
+
+  </HStack>
+);

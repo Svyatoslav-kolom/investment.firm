@@ -33,13 +33,13 @@ const textStyles = defineTextStyles({
     value: {
       fontSize: { base: "14px", md: "16px", lg: "18px", xl: "20px", "2xl": "22px" },
       fontWeight: "400",
-      lineHeight: "110%",
+      lineHeight: "140%",
     },
   },
   t2: {
     description: "Текст второго уровня",
     value: {
-      fontSize: { base: "10px", md: "12px", lg: "14px", xl: "16px", "2xl": "18px" },
+      fontSize: { base: "14px", md: "12px", lg: "14px", xl: "16px", "2xl": "18px" },
       fontWeight: "400",
       lineHeight: "140%",
       letterSpacing: "2%",
@@ -48,7 +48,7 @@ const textStyles = defineTextStyles({
   t3: {
     description: "Текст третьего уровня",
     value: {
-      fontSize: { base: "6px", md: "8px", lg: "10px", xl: "12px", "2xl": "14px" },
+      fontSize: { base: "10px", md: "8px", lg: "10px", xl: "12px", "2xl": "14px" },
       fontWeight: "400",
       lineHeight: "110%",
     },

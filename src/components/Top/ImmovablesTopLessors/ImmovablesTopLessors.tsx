@@ -34,7 +34,7 @@ export const ImmovablesTopLessors = () => {
           CustomSlideComponent={ImmovableLessorPropertyCard}
         />
 
-        <Box w="515px" h="71px" alignSelf="end" mt="25px">
+        <Box w={{base:"100%", md:"515px"}} h="71px" alignSelf="end" mt="25px">
           <BlueButton title={"Смотреть объекты"} fs="t2" onClick={() => navigate("/immovables/forLessors/catalog")} />
         </Box>
       </VStack>

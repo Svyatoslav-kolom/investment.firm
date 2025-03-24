@@ -1,45 +1,81 @@
-import { Heading, VStack, Grid, GridItem } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Heading, VStack, Grid, GridItem, Box } from "@chakra-ui/react";
 import { projects } from "../../../ConstInfo/Projects";
 import { ProjectComponent } from "../../Molecules/ProjectComponent";
+import { fadeInFrom, withMotion } from "../../../utils/animations";
 
-const MotionGridItem = motion(GridItem);
+const MotionGridItem = withMotion(GridItem);
+const MotionBox = withMotion(Box);
 
 export const Projects = () => {
   return (
-    <VStack textAlign="center" py={10} w="100%" align="center">
-      <Heading
-        textStyle="h1"
-        alignSelf="start"
-        pb={11}
-        ml={10}
-      >
+    <VStack textAlign="center" py={10} width="100%" align="center">
+      <Heading textStyle="h1" alignSelf="start" pb={11}>
         проекты
       </Heading>
 
-      <Grid templateColumns={["1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"]} gap={6} w="100%">
+      {/* Mobile view using VStack, and desktop using Grid */}
+      <VStack
+        display={{ base: "flex", md: "none" }} // Show VStack only on mobile (base, i.e., small screens)
+        gap={6}
+        width="100%"
+        align="center"
+      >
         {projects.slice(0, 6).map((project, index) => {
           const isEvenRow = index >= 3;
-          const animationDirection = isEvenRow ? -100 : 100;
+          const direction = isEvenRow ? "left" : "right"; // Determine animation direction
+
+          return (
+            <MotionBox
+              key={index}
+              {...fadeInFrom(direction)} // Apply fadeInFrom animation
+              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+              w={"100%"}
+            >
+              <ProjectComponent project={project} />
+            </MotionBox>
+          );
+        })}
+
+        {/* Last project with hardcoded image logic */}
+        <MotionBox
+          {...fadeInFrom("right")} // Apply fadeInFrom animation
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }} // Adjust delay if needed
+          w={"100%"}
+        >
+          <ProjectComponent
+            project={{
+              ...projects[6],
+              image: "/images/ProjectsImg/wide-project-mobile.png"
+            }}
+          />
+        </MotionBox>
+      </VStack>
+
+
+      <Grid
+        templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} // Grid layout for larger screens
+        gap={6}
+        w="100%"
+        display={{ base: "none", md: "grid" }} // Hide Grid on mobile, show on larger screens
+      >
+        {projects.slice(0, 6).map((project, index) => {
+          const isEvenRow = index >= 3;
+          const direction = isEvenRow ? "left" : "right"; // Determine animation direction
+
           return (
             <MotionGridItem
               key={index}
-              initial={{ x: animationDirection, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              {...fadeInFrom(direction)} // Apply fadeInFrom animation
               transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.2 }}
             >
               <ProjectComponent project={project} />
             </MotionGridItem>
           );
         })}
-
         <MotionGridItem
           colSpan={3}
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          {...fadeInFrom("right")} // Assuming you want a 'bottom' animation for the last item
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-          viewport={{ once: true, amount: 0.2 }}
         >
           <ProjectComponent project={projects[6]} aspectRatio={1598 / 358} />
         </MotionGridItem>

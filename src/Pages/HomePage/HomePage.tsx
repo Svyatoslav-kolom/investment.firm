@@ -13,11 +13,10 @@ export const HomePage = () => {
     <Box
       display="flex"
       flexDirection="column"
-      w="100%"
       zoom={zoom}
     >
 
-      <VStack mt={150} mb={150} id="about">
+      <VStack mt={150} mb={150} id="about" mx={{ base: "20px", md: "none" }}>
         <AboutSection
           title="Lumina investment fund – это инвестиционная платформа, позволяющая инвестировать в объекты через механизм коллективных инвестиций"
           content={[
@@ -27,7 +26,7 @@ export const HomePage = () => {
         />
       </VStack>
 
-      <Box id="projects">
+      <Box id="projects" mx={{ base: "20px", md: "none" }}>
         <Projects />
       </Box>
 
@@ -39,10 +38,13 @@ export const HomePage = () => {
         <HowToInvest />
       </Box>
 
-      <HowItWorks />
+      <Box>
+        <HowItWorks />
+      </Box>
 
       <Box
         mt="150px"
+        mx={{ base: "20px", md: "none" }}
       >
         <AboutSection
           title="Почему инвестировать с Lumina investment fund  выгодно и безопасно?"

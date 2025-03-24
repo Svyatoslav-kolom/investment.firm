@@ -1,4 +1,4 @@
-import { Box, Heading, VStack, Text, HStack } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text, Stack } from "@chakra-ui/react";
 import { DetailsImage } from "../../components/Molecules/DetailsImage";
 import { LoanTerms } from "./LoanTerms";
 import { BlueButton } from "../../components/Atoms/BlueButton";
@@ -11,49 +11,30 @@ export const ImmovablesDetailsPage = () => {
   const adjustedZoom = zoom ? zoom - 0.1 : 1;
 
   return (
-    <Box mt="200px" px="158px" zoom={adjustedZoom}>
-      <VStack>
-        <VStack gap="10px" mb="20px" alignSelf={"start"}>
-          <Heading
-            textStyle="h1"
-            alignSelf="start"
-          >
-            #69646431 Bridge loan - 1.stage (Lithuania)
-          </Heading>
-
-          <Text
-            fontSize={"22px"}
-            alignSelf="start"
-          >
-            Подробное описание проекта
-          </Text>
+    <Box mt={{ base: "80px", md: "200px" }} zoom={adjustedZoom}>
+      <VStack align="start">
+        <VStack gap="10px" mb="20px">
+          <Heading textStyle="h1">#69646431 Bridge loan - 1.stage (Lithuania)</Heading>
+          <Text fontSize={{ base: "18px", md: "22px" }}>Подробное описание проекта</Text>
         </VStack>
 
-        <HStack h="950px" gap="30px">
+        <Stack direction={{ base: "column", md: "row" }} gap="30px" w="100%" h="auto">
           <DetailsImage images={images} />
 
-          <VStack height={"100%"}>
-            <Heading
-              textStyle="h1"
-              alignSelf="start"
-              mt="10px"
-              mb="20px"
-            >
+          <VStack align="start" w="100%">
+            <Heading textStyle="h1" mt="10px" mb="20px">
               Условия займа
             </Heading>
-
             <LoanTerms />
           </VStack>
+        </Stack>
 
-        </HStack>
-
-        <Box w="514px" alignSelf={"end"} mt="80px">
-          <BlueButton title={"Инвестировать в недвижимость"} />
+        <Box w={{ base: "100%", md: "514px" }} mt="40px">
+          <BlueButton title="Инвестировать в недвижимость" />
         </Box>
-
       </VStack>
 
-      <Box mt={"150px"} mb={"150px"}>
+      <Box mt={{base:"50px", md:"150px"}}>
         <AboutSection
           title="Этот проект представляет собой уникальную возможность инвестирования в недвижимость с гарантией возврата и высокой доходностью. Каждый объект оценивается индивидуально, что позволяет учитывать все особенности и предлагать максимально выгодные условия."
           content={[
@@ -66,7 +47,6 @@ export const ImmovablesDetailsPage = () => {
           ]}
         />
       </Box>
-
     </Box>
   );
-}
+};
