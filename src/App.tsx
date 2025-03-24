@@ -18,6 +18,7 @@ import { ImmovablesTop } from "./components/Top/ImmovablesTop";
 import { CarsTop } from "./components/Top/CarsTop";
 import { HeaderMobile } from "./components/Organisms/HeaderMobile";
 import { useBreakpointValue } from "@chakra-ui/react";
+import { ProductionTop } from "./components/Top/ProductionTop";
 
 // Объект с Top-компонентами
 const topComponents: Record<string, React.FC> = {
@@ -32,6 +33,7 @@ const topComponents: Record<string, React.FC> = {
   "/auto": CarsTop,
   "/auto/forInvestments": CarsTopInvestment,
   "/auto/forLessors": CarsTopLessor,
+  "/production": ProductionTop,
 };
 
 function App() {

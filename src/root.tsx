@@ -7,6 +7,7 @@ import { ConsultingPage } from "./Pages/ConsultingPage";
 import { BankingPage } from "./Pages/BankingPage";
 import { CommunityPage } from "./Pages/CommunityPage";
 import { LegalServicesPage } from "./Pages/LegalServicesPage";
+import { ProductionPage } from "./Pages/ProductionPage";
 
 // Immovables Pages
 import { ImmovablesDetailsPage } from "./Pages/ImmovablesDetailsPage";
@@ -21,9 +22,10 @@ import { CarsDetailsPage } from "./Pages/CarsDetailsPage";
 import { CarsForInvestments } from "./Pages/CarsForInvestments";
 import { CarsForLessors } from "./Pages/CarsForLessors";
 import { Box } from "@chakra-ui/react";
+
+
 import { ScrollToTop } from "./ScrollToTop";
 import { ScrollToAnchor } from "./ScrollToAnchor";
-
 
 export function Root() {
   return (
@@ -39,6 +41,7 @@ export function Root() {
           <Route path="/banking" element={<BankingPage />} />
           <Route path="/entrepreneurs-community" element={<CommunityPage />} />
           <Route path="/legal-services" element={<LegalServicesPage />} />
+          <Route path="/production" element={<ProductionPage />} />
 
           {/* Недвижимость */}
           <Route path="/immovables" element={<Box />} />

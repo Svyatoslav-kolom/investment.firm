@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, List, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, VStack, List } from "@chakra-ui/react";
 import { FC } from "react";
 
 interface ServiceItem {
@@ -13,65 +13,47 @@ interface LegalServiceItemProps {
 }
 
 export const LegalServiceItem: FC<LegalServiceItemProps> = ({ service }) => (
-  <Box>
+  <Box maxW="500px" bg="white" p="20px">
     {/* Заголовок и иконка */}
-    <Flex align="center" justify="space-between" gap="20px">
-
+    <Flex align="end" justify="space-between" gap={0}>
       {/* Текстовая часть */}
-      <Box>
+      <Box flex="1">
         <Heading
-          textStyle="h2"
+          textStyle="h3"
           color="#0048B4"
-          maxW="350px"
+          w="100%"
+          textTransform="uppercase"
         >
           {service.title}
         </Heading>
 
         {/* Подчеркивание */}
-        <Box
-          h="2px"
-          w="120%"
-          bg="#0048B4"
-          mt="8px"
-        />
+        <Box h="1px" w="115%" bg="#0048B4" mt="6px" zIndex={-1}/>
       </Box>
 
       {/* Иконка */}
       <Flex
-        position="relative"
-        w="100px"
-        h="100px"
+        w="80px"
+        h="80px"
+        border="2px solid #0048B4"
+        borderRadius="full"
         align="center"
         justify="center"
-        alignSelf="end"
+        backgroundColor={"white"}
+        flexShrink={0}
+        zIndex={1}
       >
-        <Flex
-          border="2px solid #0048B4"
-          borderRadius="full"
-          maxW="100px"
-          maxH="100px"
-          bg="white"
-          aspectRatio="1 / 1" // Ровный круг
-          align="center"
-          justify="center"
-        >
-          <Image
-            src={service.icon}
-            w="70%"
-            h="70%"
-            objectFit="contain"
-          />
-        </Flex>
+        <Image src={service.icon} w="50%" h="50%" objectFit="contain" />
       </Flex>
     </Flex>
 
     {/* Описание */}
-    <VStack gap="18px" mt="35px" textStyle="t2" align="start">
-      <Text>{service.descriptionTitle}</Text>
+    <VStack align="start" mt="20px" gap="15px">
+      <Text fontSize="16px">{service.descriptionTitle}</Text>
 
-      <List.Root gap={3} pl="22px">
+      <List.Root gap="10px" pl="20px">
         {service.description.map((item, index) => (
-          <List.Item key={index} _marker={{ color: "#0048B4" }}>
+          <List.Item key={index} _marker={{ color: "#0048B4" }} fontSize="14px">
             {item}
           </List.Item>
         ))}

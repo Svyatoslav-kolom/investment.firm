@@ -26,7 +26,7 @@ export const ImmovablesTop: FC<ImmovablesTopProps> = () => (
     justifyContent={{ base: "flex-end", md: "space-between" }}
   >
     <ImmovablesTopInfo />
-    <Box w="100%" display={{ base: "none", md: "block" }}>
+    <Box display={{ base: "none", md: "block" }}>
       <ClientComponent />
     </Box>
 
