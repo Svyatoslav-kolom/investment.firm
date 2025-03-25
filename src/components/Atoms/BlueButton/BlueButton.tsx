@@ -15,7 +15,7 @@ export const BlueButton = ({
   onClick,
   variant = "solid",
   fs = "t1",
-  height = defaultHeight, // Теперь правильно передаём height
+  height = defaultHeight,
 }: BlueButtonProps) => {
   const styles = {
     solid: {
@@ -41,12 +41,19 @@ export const BlueButton = ({
     },
   };
 
+  const handleClick = () => {
+    if (title === "Зарегистрироваться" || title === "Инвестируйте") {
+      window.location.href = "https://t.me/LuminaFund_bot/webapp";
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <Box
       as="button"
       w="100%"
-      h={height} // Теперь height корректно применяется
-      // px={6}
+      h={height}
       cursor="pointer"
       fontSize={fs}
       fontWeight="bold"
@@ -60,7 +67,7 @@ export const BlueButton = ({
         bg: styles[variant].hoverBg,
         color: styles[variant].hoverColor,
       }}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {title}
     </Box>
