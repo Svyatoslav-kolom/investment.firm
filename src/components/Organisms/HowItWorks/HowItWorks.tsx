@@ -20,7 +20,6 @@ export const HowItWorks = () => {
       {/* Общий контейнер для прокрутки изображения и текста */}
       <Box
         overflowX="auto"
-        maxW="100vw"
         px={4}
         css={{
           "&::-webkit-scrollbar": { display: "none" }, // Скрываем скроллбар

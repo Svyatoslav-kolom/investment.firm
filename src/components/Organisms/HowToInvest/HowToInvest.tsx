@@ -5,7 +5,6 @@ import secondStep from "../../../assets/HowToInvest/2.svg";
 import thirdStep from "../../../assets/HowToInvest/3.svg";
 import thirdStepMobile from "../../../assets/HowToInvest/3-mobile.svg";
 import phoneMockup from "../../../assets/HowToInvest/phone.svg";
-import { BlueButton } from "../../Atoms/BlueButton";
 
 const MotionBox = withMotion(Box);
 
@@ -34,9 +33,6 @@ export const HowToInvest = () => {
             position="relative"
           >
             <Image src={thirdStepSrc} userSelect="none" pointerEvents="none" draggable="false" />
-            <Box position="absolute" top="50%" left="27%" transform="translate(-50%, -50%)" width="50%" display={{ base: "none", md: "block" }}>
-              <BlueButton title="Инвестировать" variant="light" />
-            </Box>
           </MotionBox>
 
           <MotionBox
@@ -47,7 +43,13 @@ export const HowToInvest = () => {
             left={{ base: 0, md: "50%" }}
 
           >
-            <Image src={phoneMockup} userSelect="none" pointerEvents="none" draggable="false" />
+            <Image
+              src={phoneMockup}
+              userSelect="none"
+              pointerEvents="none"
+              draggable="false"
+              w={{base:"265px", md:"100%"}}
+            />
           </MotionBox>
         </Flex>
       </Flex>

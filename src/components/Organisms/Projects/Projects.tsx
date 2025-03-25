@@ -13,14 +13,13 @@ export const Projects = () => {
         проекты
       </Heading>
 
-      {/* Mobile view using VStack, and desktop using Grid */}
       <VStack
         display={{ base: "flex", md: "none" }} // Show VStack only on mobile (base, i.e., small screens)
         gap={6}
         width="100%"
         align="center"
       >
-        {projects.slice(0, 6).map((project, index) => {
+        {projects.slice(0, 7).map((project, index) => {
           const isEvenRow = index >= 3;
           const direction = isEvenRow ? "left" : "right"; // Determine animation direction
 
@@ -36,7 +35,6 @@ export const Projects = () => {
           );
         })}
 
-        {/* Last project with hardcoded image logic */}
         <MotionBox
           {...fadeInFrom("right")} // Apply fadeInFrom animation
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }} // Adjust delay if needed
@@ -72,12 +70,21 @@ export const Projects = () => {
             </MotionGridItem>
           );
         })}
+
         <MotionGridItem
-          colSpan={3}
+          colSpan={1}
           {...fadeInFrom("right")} // Assuming you want a 'bottom' animation for the last item
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
-          <ProjectComponent project={projects[6]} aspectRatio={1598 / 358} />
+          <ProjectComponent project={projects[6]} />
+        </MotionGridItem>
+
+        <MotionGridItem
+          colSpan={2}
+          {...fadeInFrom("right")} // Assuming you want a 'bottom' animation for the last item
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        >
+          <ProjectComponent project={projects[7]} aspectRatio={1058 / 358} />
         </MotionGridItem>
       </Grid>
     </VStack>

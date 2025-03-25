@@ -30,7 +30,6 @@ export const HomePage = () => {
         <Projects />
       </Box>
 
-
       <Box
         mb="309px"
         id="howToInvest"
@@ -38,9 +37,12 @@ export const HomePage = () => {
         <HowToInvest />
       </Box>
 
-      <Box>
+      <Box maxW="100vw" >
         <HowItWorks />
       </Box>
+
+
+
 
       <Box
         mt="150px"
