@@ -32,7 +32,7 @@ export const HowToInvest = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             position="relative"
           >
-            <Image src={thirdStepSrc} userSelect="none" pointerEvents="none" draggable="false" />
+            <Image src={thirdStepSrc} userSelect="none" pointerEvents="none" draggable="false" w={{base:"800px", md:"100%"}}/>
           </MotionBox>
 
           <MotionBox

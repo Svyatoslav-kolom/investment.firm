@@ -1,11 +1,12 @@
 import { Box, HStack, IconButton, Image } from "@chakra-ui/react";
-import { LuMenu, LuX } from "react-icons/lu";
+import {  LuX } from "react-icons/lu";
 import { HashLink } from "react-router-hash-link";
 import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
 import { HeaderLinksMobile } from "../../Molecules/HeaderLinksMobile";
 import { BlueButton } from "../../Atoms/BlueButton";
 import { useState } from "react";
 import { keyframes } from "@emotion/react";
+import BurgerIcon from "../../../assets/icons/BurgerIcon.svg";
 
 // Define keyframes for the animation
 const slideIn = keyframes`
@@ -47,14 +48,14 @@ export const HeaderMobile: React.FC<HeaderProps> = ({ isHome }) => {
       py={3}
       justifyContent="space-between"
       alignItems="center"
-      h={{ base: "50px", md: "75px", xl: "100px" }}
       w="100%"
+      pt={"25px"}
       position="relative"
       id="mobile-header"
       animation={open ? `${backgroundFill} 0.5s forwards` : ""}
     >
       <HashLink smooth to="/#">
-        <Image src={HeaderIcon} height={{ base: "30px", md: "40px" }} alt="Logo" />
+        <Image src={HeaderIcon} height="50px" alt="Logo" />
       </HashLink>
 
       <IconButton
@@ -62,11 +63,15 @@ export const HeaderMobile: React.FC<HeaderProps> = ({ isHome }) => {
         colorScheme="blue"
         variant="ghost"
         fontSize="24px"
-        boxSize="40px"
+        boxSize="50px"
         color="#0048B4"
         onClick={toggleMenu}
       >
-        {open ? <LuX /> : <LuMenu />}
+        {open ?
+          <LuX />
+          :
+          <Image src={BurgerIcon} />
+        }
       </IconButton>
 
       {/* Menu with animation */}
