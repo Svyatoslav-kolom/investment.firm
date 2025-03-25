@@ -14,7 +14,7 @@ export const ClientComponent = () => {
       background="linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.1))"
       backdropFilter="blur(10px)"
       justifyContent="space-between"
-      maxW={"450px"}
+      maxW={{base:"1000px", md:"390px", "2xl":"480px"}}
       w={"100%"}
       px={10}
       py={3}
@@ -36,7 +36,7 @@ export const ClientComponent = () => {
 
       {/* Текстовый блок */}
       <HStack gap={4}>
-        <Text textStyle="t2">наши клиенты</Text>
+        <Text textStyle="t3">наши клиенты</Text>
         <Text textStyle="h1" fontWeight={600}>50K +</Text>
       </HStack>
     </HStack>

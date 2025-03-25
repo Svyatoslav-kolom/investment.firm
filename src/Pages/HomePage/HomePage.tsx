@@ -41,9 +41,6 @@ export const HomePage = () => {
         <HowItWorks />
       </Box>
 
-
-
-
       <Box
         mt="150px"
         mx={{ base: "20px", md: "none" }}

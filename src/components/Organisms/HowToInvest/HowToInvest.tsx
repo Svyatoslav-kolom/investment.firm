@@ -4,7 +4,7 @@ import firstStep from "../../../assets/HowToInvest/1.svg";
 import secondStep from "../../../assets/HowToInvest/2.svg";
 import thirdStep from "../../../assets/HowToInvest/3.svg";
 import thirdStepMobile from "../../../assets/HowToInvest/3-mobile.svg";
-import phoneMockup from "../../../assets/HowToInvest/phone.svg";
+import phoneMockup from "../../../assets/HowToInvest/phone.png";
 
 const MotionBox = withMotion(Box);
 

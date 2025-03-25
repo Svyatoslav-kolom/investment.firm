@@ -39,7 +39,7 @@ export const HowItWorks = () => {
           />
 
           {/* Горизонтальный контейнер с текстами */}
-          <HStack gap="10px" width="fit-content">
+          <HStack gap="10px" width="fit-content" alignItems="flex-start">
             {services.map((section) => (
               <Box key={section.title} w="300px" flexShrink={0}>
                 <Text fontSize="28px" fontWeight={400} lineHeight="140%" mb="16px">
