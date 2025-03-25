@@ -44,7 +44,7 @@ export const InvestmentPoints: FC<Props> = ({ info }) => {
         ))}
       </MotionStack>
 
-      <MotionStack gap="30px" {...fadeInFrom("right")} direction={{ base: "column", md: "row" }}>
+      <MotionStack gap="30px" {...fadeInFrom("left")} direction={{ base: "column", md: "row" }}>
         {info.slice(2).map((item, index) => (
           <BlueRectangle key={index} {...item} />
         ))}

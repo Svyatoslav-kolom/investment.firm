@@ -21,7 +21,7 @@ export const Projects = () => {
       >
         {projects.slice(0, 7).map((project, index) => {
           const isEvenRow = index >= 3;
-          const direction = isEvenRow ? "left" : "right"; // Determine animation direction
+          const direction = isEvenRow ? "left" : "left"; 
 
           return (
             <MotionBox
@@ -36,7 +36,7 @@ export const Projects = () => {
         })}
 
         <MotionBox
-          {...fadeInFrom("right")} // Apply fadeInFrom animation
+          {...fadeInFrom("left")} // Apply fadeInFrom animation
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }} // Adjust delay if needed
           w={"100%"}
         >
@@ -58,7 +58,7 @@ export const Projects = () => {
       >
         {projects.slice(0, 6).map((project, index) => {
           const isEvenRow = index >= 3;
-          const direction = isEvenRow ? "left" : "right"; // Determine animation direction
+          const direction = isEvenRow ? "left" : "left"; // Determine animation direction
 
           return (
             <MotionGridItem
@@ -73,7 +73,7 @@ export const Projects = () => {
 
         <MotionGridItem
           colSpan={1}
-          {...fadeInFrom("right")} // Assuming you want a 'bottom' animation for the last item
+          {...fadeInFrom("left")} // Assuming you want a 'bottom' animation for the last item
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <ProjectComponent project={projects[6]} />
@@ -81,7 +81,7 @@ export const Projects = () => {
 
         <MotionGridItem
           colSpan={2}
-          {...fadeInFrom("right")} // Assuming you want a 'bottom' animation for the last item
+          {...fadeInFrom("left")} // Assuming you want a 'bottom' animation for the last item
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <ProjectComponent project={projects[7]} aspectRatio={1058 / 358} />

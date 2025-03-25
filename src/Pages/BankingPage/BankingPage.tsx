@@ -43,7 +43,7 @@ export const BankingPage = () => {
           />
 
           {/* Desktop Content */}
-          <MotionVStack align="start" justifyContent="space-around" height="100%" {...fadeInFrom("right")}>
+          <MotionVStack align="start" justifyContent="space-around" height="100%" {...fadeInFrom("left")}>
             {services.map(({ title, description, items }) => (
               <HStack key={title} align="start" gap="40px">
                 <VStack align="start">
@@ -61,7 +61,7 @@ export const BankingPage = () => {
                     <MotionText
                       key={index}
                       fontSize={16}
-                      {...fadeInFrom("right")}
+                      {...fadeInFrom("left")}
                       transition={{
                         duration: 0.8,
                         ease: "easeOut",

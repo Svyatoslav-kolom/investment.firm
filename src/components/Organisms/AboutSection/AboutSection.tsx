@@ -23,7 +23,7 @@ export const AboutSection: FC<AboutProps> = ({ title, content }) => {
       </MotionText>
 
       <MotionVStack
-        {...fadeInFrom("right")}
+        {...fadeInFrom("left")}
         textStyle="t1"
         gap={7}
         width={{base:"100%", md: "35%"}}

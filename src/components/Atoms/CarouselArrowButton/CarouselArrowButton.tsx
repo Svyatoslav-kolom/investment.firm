@@ -16,7 +16,7 @@ export const CarouselArrowButton = forwardRef<HTMLButtonElement, CarouselArrowBu
         onClick={onClick}
         aria-label={direction === "next" ? "Next" : "Previous"}
         position="absolute"
-        {...(direction === "next" ? { right: {base:"-20px", md:"70px"} } : { left: {base:"-20px", md:"-70px"}  })}
+        {...(direction === "next" ? { right: {base:"-20px", md:"-70px"} } : { left: {base:"-20px", md:"-70px"}  })}
         top="50%"
         transform="translateY(-50%)"
         display="flex"

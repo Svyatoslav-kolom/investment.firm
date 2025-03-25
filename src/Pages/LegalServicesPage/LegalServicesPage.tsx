@@ -12,7 +12,7 @@ export const LegalServicesPage = () => {
   return (
     <Box mt="60px" zoom={zoom}>
       <MotionText
-        {...fadeInFrom("right")}
+        {...fadeInFrom("left")}
         w={{ base: "350px", md: "520px" }}
         textStyle="t2"
         lineHeight="140%"

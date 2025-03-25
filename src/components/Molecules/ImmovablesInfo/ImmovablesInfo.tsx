@@ -56,7 +56,7 @@ export const ImmovablesInfo: FC<Props> = ({ title, info, wrapId }) => {
       <MotionStack
         alignSelf={{ base: "center", md: "end" }}
         display={{ base: "none", md: "flex" }}
-        {...fadeInFrom("right")}
+        {...fadeInFrom("left")}
         flexDirection={{ base: "column", md: "row" }} // Вертикально на мобилке
         alignItems="center"
       >

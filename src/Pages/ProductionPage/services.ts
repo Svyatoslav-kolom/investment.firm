@@ -8,7 +8,7 @@ export interface ServiceItem {
 export const servicesData: ServiceItem[] = [
     {
         title: "Видеопродакшн",
-        icon: "/src/assets/icons/ProductionIcons/1.svg",
+        icon: "./src/assets/icons/ProductionIcons/1.svg",
         descriptionTitle: "Создание качественного видеоконтента для бизнеса, рекламы и мероприятий",
         description: [
             "Разработка концепции и сценария",
@@ -19,7 +19,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Фотопродакшн",
-        icon: "/src/assets/icons/ProductionIcons/2.svg",
+        icon: "./src/assets/icons/ProductionIcons/2.svg",
         descriptionTitle: "Создание профессиональных фото для бизнеса и социальных сетей",
         description: [
             "Создание концепций для фотосессий (реклама, продукты, fashion)",
@@ -30,7 +30,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Аудиопродакшн",
-        icon: "/src/assets/icons/ProductionIcons/3.svg",
+        icon: "./src/assets/icons/ProductionIcons/3.svg",
         descriptionTitle: "Мы поможем оформить статус и защитить ваши права",
         description: [
             "Создание концепции (подкаст, озвучка, музыка)",
@@ -41,7 +41,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Подкасты",
-        icon: "/src/assets/icons/ProductionIcons/4.svg",
+        icon: "./src/assets/icons/ProductionIcons/4.svg",
         descriptionTitle: "Полный цикл создания подкастов – от идеи до продвижения",
         description: [
             "Определение тематики и формата",
@@ -53,7 +53,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Технический продакшн",
-        icon: "/src/assets/icons/ProductionIcons/5.svg",
+        icon: "./src/assets/icons/ProductionIcons/5.svg",
         descriptionTitle: "Обеспечение технического качества контента с применением передовых технологий",
         description: [
             "Подбор и настройка оборудования (камеры, дроны, свет)",
@@ -63,7 +63,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Событийный продакшн",
-        icon: "/src/assets/icons/ProductionIcons/6.svg",
+        icon: "./src/assets/icons/ProductionIcons/6.svg",
         descriptionTitle: "Организация и сопровождение мероприятий с профессиональной съемкой",
         description: [
             "Разработка концепции мероприятия (концерт, семинар, выставка)",
@@ -74,7 +74,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "Рекламный продакшн",
-        icon: "/src/assets/icons/ProductionIcons/7.svg",
+        icon: "./src/assets/icons/ProductionIcons/7.svg",
         descriptionTitle: "Полный цикл создания рекламного контента – от идеи до выпуска",
         description: [
             "Создание идеи и сценария рекламного ролика",

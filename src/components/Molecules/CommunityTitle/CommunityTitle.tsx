@@ -19,7 +19,7 @@ export const CommunityTitle = () => {
       </MotionText>
 
       <MotionText
-        {...fadeInFrom("right")}
+        {...fadeInFrom("left")}
         textStyle="t2"
         maxWidth="500px"
       >

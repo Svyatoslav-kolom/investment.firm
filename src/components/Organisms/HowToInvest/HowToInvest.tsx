@@ -28,7 +28,7 @@ export const HowToInvest = () => {
 
         <Flex flex="2 1 600px" justify="center" position="relative">
           <MotionBox
-            {...fadeInFrom("right")}
+            {...fadeInFrom("left")}
             transition={{ duration: 0.8, delay: 0.6 }}
             position="relative"
           >
@@ -36,7 +36,7 @@ export const HowToInvest = () => {
           </MotionBox>
 
           <MotionBox
-            {...fadeInFrom("right")}
+            {...fadeInFrom("left")}
             transition={{ duration: 0.8, delay: 1.2 }}
             position="absolute"
             top={{ base: "40%", md: "5%" }}
