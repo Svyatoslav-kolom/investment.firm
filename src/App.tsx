@@ -19,6 +19,7 @@ import { CarsTop } from "./components/Top/CarsTop";
 import { HeaderMobile } from "./components/Organisms/HeaderMobile";
 import { useBreakpointValue } from "@chakra-ui/react";
 import { ProductionTop } from "./components/Top/ProductionTop";
+import { CarsCatalogTop } from "./components/Top/CarsCatalogTop";
 
 // Объект с Top-компонентами
 const topComponents: Record<string, React.FC> = {
@@ -34,6 +35,7 @@ const topComponents: Record<string, React.FC> = {
   "/auto/forInvestments": CarsTopInvestment,
   "/auto/forLessors": CarsTopLessor,
   "/production": ProductionTop,
+  "/auto/catalog": CarsCatalogTop,
 };
 
 function App() {
@@ -48,10 +50,11 @@ function App() {
     <VStack m={0} p={0} overflowX="hidden">
       {/* Фиксированный Header */}
       <Box
-        position="absolute"
+        position="fixed"
         top={{ base: "0", md: "40px" }}
         left={{ base: "0", md: "112px" }}
         right={{ base: "0", md: "112px" }}
+        zIndex={1000}
       >
         {window.innerWidth < 768 ? (
           <HeaderMobile isHome={true} />

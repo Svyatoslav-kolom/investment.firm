@@ -8,7 +8,7 @@ interface BlueButtonProps {
   height?: any; // Сделаем height адаптивным
 }
 
-const defaultHeight = { base: "50px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" };
+const defaultHeight = { base: "45px", md: "30px", lg: "40px", xl: "45px", "2xl": "50px" };
 
 export const BlueButton = ({
   title,

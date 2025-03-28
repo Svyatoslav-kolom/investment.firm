@@ -38,7 +38,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         backgroundColor={property.isReady ? "#DF0000" : "#1CA242"}
         color="white"
         fontSize="14px"
-        fontWeight="bold"
+        
         px="12px"
         py="4px"
         textAlign="center"
@@ -57,7 +57,7 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
       </Box>
 
       <VStack align="start" gap={2} mt={3}>
-        <Text textStyle="h2">{property.title}</Text>
+        <Text textStyle="h2"  textTransform={"none"}>{property.title}</Text>
         <HStack fontSize="sm">
           <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
@@ -76,17 +76,17 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
-            <Text textStyle="t2" fontWeight="bold">{property.price.toLocaleString()} $</Text>
+            <Text textStyle="t2">{property.price.toLocaleString()} $</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Ежемесячная доходность:</Text>
-            <Text textStyle="t2" color="#0048B4" fontWeight="bold">{property.monthlyIncome}%</Text>
+            <Text textStyle="t2" color="#0048B4" >{property.monthlyIncome}%</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Мин. порог входа:</Text>
-            <Text textStyle="t2" fontWeight="bold">от {property.minEntry.toLocaleString()} $</Text>
+            <Text textStyle="t2" >от {property.minEntry.toLocaleString()} $</Text>
           </HStack>
         </VStack>
 
@@ -95,12 +95,12 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Выкуплено:</Text>
-            <Text textStyle="t2" fontWeight="bold">{property.purchased} м²</Text>
+            <Text textStyle="t2" >{property.purchased} м²</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Осталось:</Text>
-            <Text textStyle="t2" color="#0048B4" fontWeight="bold">
+            <Text textStyle="t2" color="#0048B4" >
               {(property.area - property.purchased).toLocaleString()} м²
             </Text>
           </HStack>

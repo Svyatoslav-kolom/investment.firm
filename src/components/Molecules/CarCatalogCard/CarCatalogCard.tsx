@@ -27,7 +27,6 @@ export const CarCatalogCard: React.FC<Props> = ({
     <Box
       borderRadius="xl"
       overflow="hidden"
-      bgColor="#F3F3F3"
       boxShadow="md"
       pt="10px"
       px="15px"

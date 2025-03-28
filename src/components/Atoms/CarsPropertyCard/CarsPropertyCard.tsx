@@ -1,6 +1,7 @@
 import { Box, Image, Text, VStack, HStack } from "@chakra-ui/react";
 import React from "react";
 import { BlueButton } from "../BlueButton";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   title: string;
@@ -13,6 +14,8 @@ export const CarsPropertyCard: React.FC<Props> = ({
   price,
   imageUrl,
 }) => {
+
+  const navigate = useNavigate();
   return (
     <Box
       borderRadius="xl"
@@ -32,7 +35,7 @@ export const CarsPropertyCard: React.FC<Props> = ({
           <Text fontSize="lg" color="#0048B4" fontWeight="bold">от {price} $/cут</Text>
         </HStack>
 
-        <BlueButton title="Подробнее" variant="outline" fs="t2" />
+        <BlueButton title="Подробнее" variant="outline" fs="14px" onClick={() => navigate("/auto/details")} />
       </VStack>
     </Box>
   );

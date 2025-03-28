@@ -4,7 +4,7 @@ import { BlueRectangleType } from "../../../Types/BlueRectangleType";
 
 export const BlueRectangle: FC<BlueRectangleType> = ({
   number,
-  img,
+  imageUrl,
   title,
   description,
 }) => {
@@ -35,7 +35,7 @@ export const BlueRectangle: FC<BlueRectangleType> = ({
         >
           {number}
         </Text>
-        <Image src={img} />
+        <Image src={imageUrl} />
       </HStack>
 
       <VStack gap="10px" justifySelf="start">

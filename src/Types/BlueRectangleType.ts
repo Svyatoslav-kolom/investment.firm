@@ -1,6 +1,6 @@
 export interface BlueRectangleType {
   number: string;
-  img: string;
+  imageUrl: string;
   title: string;
   description: string;
 }

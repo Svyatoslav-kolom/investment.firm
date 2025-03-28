@@ -34,14 +34,14 @@ export const LoanTerms = () => {
   return (
     <Box height="100%" textStyle="t2" maxH="1000px">
       {/* Готовность проекта */}
-      <Text mb={2} fontWeight="bold">
+      <Text mb={2}>
         Готовность проекта: 55%
       </Text>
 
       {/* Прогресс бар */}
-      <Progress.Root value={55} w="100%" shape="rounded">
-        <Progress.Track>
-          <Progress.Range style={{ backgroundColor: "#0048B4" }} />
+      <Progress.Root value={55} w="100%" borderRadius="full" colorScheme="blue">
+        <Progress.Track borderRadius="full">
+          <Progress.Range style={{ backgroundColor: "#0048B4", borderRadius: "full" }} />
         </Progress.Track>
       </Progress.Root>
 

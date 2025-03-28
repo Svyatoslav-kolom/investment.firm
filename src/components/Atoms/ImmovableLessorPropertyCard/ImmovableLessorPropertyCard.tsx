@@ -1,6 +1,7 @@
 import { Box, Image, Text, VStack, HStack } from "@chakra-ui/react";
 import React from "react";
 import { BlueButton } from "../BlueButton";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   title: string;
@@ -21,7 +22,8 @@ export const ImmovableLessorPropertyCard: React.FC<Props> = ({
   minInvestment,
   imageUrl,
 }) => {
-
+  const navigate = useNavigate();
+  
   return (
     <Box
       borderRadius="lg"
@@ -64,7 +66,7 @@ export const ImmovableLessorPropertyCard: React.FC<Props> = ({
               <Text fontSize="lg" fontWeight="bold">{minInvestment.toLocaleString()} %</Text>
             </Box>
 
-            <BlueButton title="Подробнее" variant="outline" fs="13px" height="50px"/>
+             <BlueButton title="Подробнее" variant="outline" fs="13px" onClick={() => navigate("/immovables/details")} />
 
           </VStack>
         </HStack>

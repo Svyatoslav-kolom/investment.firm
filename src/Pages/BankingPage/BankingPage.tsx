@@ -1,11 +1,10 @@
-import { Box, Text, Image, VStack, HStack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Text, Image, VStack, HStack, useBreakpointValue, Stack } from "@chakra-ui/react";
 import Banking from "../../assets/Banking.svg";
 import BankingMobile from "../../assets/Banking-mobile.png";
 import { services } from "./services";
 import useZoom from "../../zoom";
 import SwipeIcon from "../../assets/swipeIcon.svg";
 import { fadeInFrom, withMotion } from "../../utils/animations";
-import { AboutSection } from "../../components/Organisms/AboutSection";
 
 // Motion components for animations
 const MotionImage = withMotion(Image);
@@ -129,13 +128,26 @@ export const BankingPage = () => {
         justifySelf={"flex-end"}
       />
 
-      <Box height={{ base: "auto", md: "620px" }} mx={{ base: "20px", md: "none" }} mt={"50px"}>
-        <AboutSection
-          title="Начните сегодня!"
-          content={[
-            "Откройте для себя удобство и безопасность современных финансовых услуг. Присоединяйтесь к нам и используйте наши выгодные предложения уже сегодня!",
-          ]}
-        />
+      <Box height={{ base: "auto", md: "140px" }} width={"66%"} ml={"auto"}>
+        <Stack direction={{ base: "column", md: "row" }} gap={7} align="start" w={"100%"}>
+          <MotionText
+            {...fadeInFrom("left")}
+            textStyle="h2"
+            width={{ base: "100%", md: "65%" }}
+            textTransform={"uppercase"}
+          >
+            Начните сегодня!
+          </MotionText>
+
+          <MotionText
+            {...fadeInFrom("left")}
+            textStyle="t1"
+            gap={7}
+            width="100%"
+          >
+            Откройте для себя удобство и безопасность современных финансовых услуг. Присоединяйтесь к нам и используйте наши выгодные предложения уже сегодня!
+          </MotionText>
+        </Stack>
       </Box>
     </Box>
   );

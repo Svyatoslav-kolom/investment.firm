@@ -12,8 +12,12 @@ export const CarsForLessors = () => {
 
   return (
     <VStack alignItems="center" justifyContent="center" zoom={zoom} mx={{ base: "20px", md: "none" }}>
-      <Box px={{ base: "20px", md: "158px" }} mt={{ base: "40px", md: "140px" }} mb={{ base: "40px", md: "140px" }}>
-        <Box height={{ base: "auto", md: "620px" }}>
+      <Box 
+        px={{ base: "20px", md: "158px" }} 
+        mt={{ base: "40px", md: "140px" }} 
+        mb={{ base: "40px", md: "140px" }}
+      >
+        <Box height={{ base: "auto", md: "140px" }}>
           <AboutSection
             title="Почему лизинг авто недоступен: проблемы и пути решения"
             content={[

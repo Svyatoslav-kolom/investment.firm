@@ -1,6 +1,8 @@
+const BASE_URL = "/images/CarsCards/";
+
 export const images = [
-    "/images/CarsCards/1.png",
-    "/images/CarsCards/2.png",
-    "/images/CarsCards/3.png",
-    "/images/CarsCards/4.png",
+    `${BASE_URL}1.png`,
+    `${BASE_URL}2.png`,
+    `${BASE_URL}3.png`,
+    `${BASE_URL}4.png`,
 ];

@@ -16,7 +16,7 @@ export const DesktopFilter = () => {
         <BlueButton
           key={filter.label}
           title={`${filter.label} (${filter.count})`}
-          variant={filter.label === "Все" ? "light" : "solid"}
+          variant={filter.label === "Все" ? "solid" : "light"}
         />
       ))}
     </HStack>

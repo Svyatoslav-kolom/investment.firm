@@ -38,8 +38,7 @@ export const CarsCatalog = () => {
       
       <MobileFilter isOpen={isMobileFilterOpen} onClose={closeMobileFilter} />
 
-
-      <Box display={{ base: "none", md: "flex" }}>
+      <Box display={{ base: "none", md: "flex" }} mb="40px">
         <DesktopFilter />
       </Box>
 

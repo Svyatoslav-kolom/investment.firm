@@ -22,9 +22,9 @@ export const CarouselArrowButton = forwardRef<HTMLButtonElement, CarouselArrowBu
         display="flex"
         alignItems="center"
         justifyContent="center"
-        width={{ base: "40px", md: "60px" }} // На мобильных устройствах ширина 40px
-        height={{ base: "40px", md: "60px" }} // Высота также 40px на мобильных устройствах
-        borderRadius="50%" // Обеспечивает круглую форму
+        width={{ base: "40px", md: "60px" }}
+        height={{ base: "40px", md: "60px" }}
+        borderRadius="50%"
         backgroundColor="#F9FAFF80"
         boxShadow="md"
         alignSelf="end"
@@ -33,8 +33,8 @@ export const CarouselArrowButton = forwardRef<HTMLButtonElement, CarouselArrowBu
       >
         <Image
           src={rightArrow}
-          width={{ base: "20px", md: "40px" }}
-          height={{ base: "20px", md: "40px" }}
+          width={{ base: "15px", md: "35px" }}
+          height={{ base: "15px", md: "35px" }}
           transform={direction === "prev" ? "scaleX(-1)" : "none"}
         />
       </IconButton>

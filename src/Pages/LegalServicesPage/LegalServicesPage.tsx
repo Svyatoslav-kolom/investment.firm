@@ -24,7 +24,7 @@ export const LegalServicesPage = () => {
 
       <LegalServiceCatalog services={servicesData} />
 
-      <Box height={{ base: "auto", md: "620px" }} mx={{ base: "20px", md: "none" }} mt={"50px"}>
+      <Box height={{ base: "auto", md: "140px" }} mx={{ base: "20px", md: "none" }} mt={"50px"}>
         <AboutSection
           title="Доверьте нам свои правовые вопросы!"
           content={[

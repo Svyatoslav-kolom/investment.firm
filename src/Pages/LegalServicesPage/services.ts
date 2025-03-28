@@ -1,3 +1,8 @@
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const ICONS_PATH = "icons/legalServicesIcons/";
+
+const getIconUrl = (fileName: string) => `${BASE_URL}${ICONS_PATH}${fileName}`;
+
 export interface ServiceItem {
     title: string;
     icon: string;
@@ -5,11 +10,10 @@ export interface ServiceItem {
     description: string[];
 }
 
-
 export const servicesData: ServiceItem[] = [
     {
         title: "ОФОРМЛЕНИЕ ВНЖ, ПМЖ И ГРАЖДАНСТВА",
-        icon: "./src/assets/icons/legalServicesIcons/1.svg",
+        icon: getIconUrl("1.svg"),
         descriptionTitle:
             "Мы поможем вам получить законный статус в Турции — от временного вида на жительство до гражданства:",
         description: [
@@ -21,7 +25,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "ЮРИДИЧЕСКАЯ ПОДДЕРЖКА БИЗНЕСА",
-        icon: "./src/assets/icons/legalServicesIcons/2.svg",
+        icon: getIconUrl("2.svg"),
         descriptionTitle: "Мы обеспечим вашему бизнесу надежную правовую защиту:",
         description: [
             "Регистрация компаний — ИП, ООО, АО и другие формы бизнеса.",
@@ -32,7 +36,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "ИММИГРАЦИОННОЕ И БЕЖЕНСКОЕ ПРАВО",
-        icon: "./src/assets/icons/legalServicesIcons/3.svg",
+        icon: getIconUrl("3.svg"),
         descriptionTitle: "Мы поможем оформить статус и защитить ваши права:",
         description: [
             "Оформление статуса беженца — Полное сопровождение и ведение процесса.",
@@ -42,7 +46,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "СДЕЛКИ С НЕДВИЖИМОСТЬЮ И АВТОМОБИЛЯМИ",
-        icon: "./src/assets/icons/legalServicesIcons/4.svg",
+        icon: getIconUrl("4.svg"),
         descriptionTitle: "Обеспечьте безопасность сделок с имуществом:",
         description: [
             "Покупка, продажа и аренда недвижимости — Полное сопровождение.",
@@ -53,7 +57,7 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "СУДЕБНОЕ ПРЕДСТАВИТЕЛЬСТВО И ЗАЩИТА В ТУРЦИИ",
-        icon: "./src/assets/icons/legalServicesIcons/5.svg",
+        icon: getIconUrl("5.svg"),
         descriptionTitle: "Профессиональная защита ваших интересов в судах:",
         description: [
             "Ведение гражданских, уголовных и административных дел — Полное сопровождение в процессе.",

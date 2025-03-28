@@ -39,7 +39,7 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
 
       {/* Заголовок и локация */}
       <VStack align="start" gap={2} mt={3}>
-        <Text textStyle="h1">{property.title}</Text>
+        <Text textStyle="h1" textTransform={"none"}>{property.title}</Text>
         <Stack direction={{ base: "column", md: "row" }} fontSize="sm">
           <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
@@ -52,17 +52,17 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
-            <Text textStyle="t2" fontWeight="bold">{property.price.toLocaleString()} $</Text>
+            <Text textStyle="t2" >{property.price.toLocaleString()} $</Text>
           </Stack>
 
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Комиссия:</Text>
-            <Text textStyle="t2" color="#0048B4" fontWeight="bold">{property.commission}%</Text>
+            <Text textStyle="t2" color="#0048B4" >{property.commission}%</Text>
           </Stack>
 
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Мин. взнос:</Text>
-            <Text textStyle="t2" fontWeight="bold">от {property.minEntry.toLocaleString()} $</Text>
+            <Text textStyle="t2" >от {property.minEntry.toLocaleString()} $</Text>
           </Stack>
         </VStack>
 
@@ -72,19 +72,19 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Этаж:</Text>
-            <Text textStyle="t2" fontWeight="bold">{property.floor}</Text>
+            <Text textStyle="t2" >{property.floor}</Text>
           </Stack>
 
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Кол-во комнат:</Text>
-            <Text textStyle="t2" color="#0048B4" fontWeight="bold">
+            <Text textStyle="t2" color="#0048B4" >
               {property.rooms}
             </Text>
           </Stack>
 
           <Stack direction="row" justify="space-between" w="100%">
             <Text fontWeight="medium">Кол-во санузлов:</Text>
-            <Text textStyle="t2" color="#0048B4" fontWeight="bold">
+            <Text textStyle="t2" color="#0048B4" >
               {property.bathrooms}
             </Text>
           </Stack>

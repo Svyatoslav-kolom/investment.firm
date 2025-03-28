@@ -13,7 +13,7 @@ export const CarsForInvestments = () => {
   return (
     <VStack alignItems="center" justifyContent="center" zoom={zoom} mx={{ base: "20px", md: "none" }}>
       <Box px={{ base: "20px", md: "158px" }} mt={{ base: "40px", md: "140px" }} mb={{ base: "40px", md: "140px" }}>
-        <Box height={{ base: "auto", md: "620px" }}>
+        <Box  height={{ base: "auto", md: "140px" }}>
           <AboutSection
             title="Автомобиль как выгодный актив: проблемы и решения"
             content={[

@@ -18,7 +18,6 @@ export const DetailsImage: React.FC<ImageGalleryProps> = ({ images }) => {
       <Box position="relative" w="100%">
         <Image src={images[currentImage]} alt="Main Image" borderRadius="lg" w="100%" h="auto" />
 
-        {/* Стрілки завжди відображаються */}
         <Box position="absolute" top="50%" left="10%" transform="translateY(-50%)">
           <CarouselArrowButton direction="prev" onClick={handlePrevImage} />
         </Box>
@@ -27,21 +26,21 @@ export const DetailsImage: React.FC<ImageGalleryProps> = ({ images }) => {
         </Box>
       </Box>
 
-      {/* Прев'ю зображень відображається лише на десктопі */}
       {!isMobile && (
         <Box mt={4} display="flex" justifyContent="center" gap={2} w="100%">
           {images.map((image, index) => (
-            <Image
-              key={index}
-              src={image}
-              borderRadius="md"
-              cursor="pointer"
-              w="calc(33.33% - 8px)"
-              h="auto"
-              objectFit="cover"
-              opacity={currentImage === index ? 1 : 0.6}
-              onClick={() => setCurrentImage(index)}
-            />
+            index !== currentImage && ( // Исключаем текущее изображение
+              <Image
+                key={index}
+                src={image}
+                borderRadius="md"
+                cursor="pointer"
+                w="calc(33.33% - 8px)"
+                objectFit="cover"
+                onClick={() => setCurrentImage(index)}
+                _hover={{ opacity: 1 }}
+              />
+            )
           ))}
         </Box>
       )}

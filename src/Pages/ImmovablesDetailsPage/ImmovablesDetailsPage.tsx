@@ -21,7 +21,7 @@ export const ImmovablesDetailsPage = () => {
         <Stack direction={{ base: "column", md: "row" }} gap="30px" w="100%" h="auto">
           <DetailsImage images={images} />
 
-          <VStack align="start" w="100%">
+          <VStack align="start" maxW={{ md: "530px" }} w="100%">
             <Heading textStyle="h1" mt="10px" mb="20px">
               Условия займа
             </Heading>
@@ -34,7 +34,7 @@ export const ImmovablesDetailsPage = () => {
         </Box>
       </VStack>
 
-      <Box mt={{base:"50px", md:"150px"}}>
+      <Box mt={{ base: "50px", md: "150px" }}>
         <AboutSection
           title="Этот проект представляет собой уникальную возможность инвестирования в недвижимость с гарантией возврата и высокой доходностью. Каждый объект оценивается индивидуально, что позволяет учитывать все особенности и предлагать максимально выгодные условия."
           content={[
