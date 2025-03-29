@@ -1,11 +1,16 @@
-// Импортируем все иконки синхронно
 const icons = import.meta.glob(
     "../assets/icons/legalServicesIcons/*.svg",
     { eager: true }
 ) as Record<string, { default: string }>;
 
-// Описание услуг (без иконок)
-const servicesData = [
+export interface ServiceItem {
+    title: string;
+    descriptionTitle: string;
+    description: string[];
+    icon: string;
+}
+
+const servicesData: Omit<ServiceItem, 'icon'>[] = [
     {
         title: "ОФОРМЛЕНИЕ ВНЖ, ПМЖ И ГРАЖДАНСТВА",
         descriptionTitle: "Мы поможем вам получить законный статус в Турции — от временного вида на жительство до гражданства:",
@@ -56,10 +61,9 @@ const servicesData = [
     }
 ];
 
-// Формируем финальный массив с услугами, связывая иконки и текстовые данные
-export const servicesDataWithIcons = Object.values(icons)
+export const servicesDataWithIcons: ServiceItem[] = Object.values(icons)
     .map(image => image.default) // Получаем пути к иконкам
     .map((icon, index) => ({
         icon,
-        ...servicesData[index], // Добавляем заголовок, описание и описание услуги
+        ...servicesData[index] // Добавляем заголовок, описание и описание услуги
     }));
