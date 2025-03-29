@@ -1,5 +1,5 @@
 const BASE_URL = import.meta.env.BASE_URL || "/";
-const IMAGES_PATH = "icons/problems/forInvestments/";
+const IMAGES_PATH = "public/icons/problems/forInvestments/";
 
 const getImageUrl = (fileName: string) => `${BASE_URL}${IMAGES_PATH}${fileName}`;
 
