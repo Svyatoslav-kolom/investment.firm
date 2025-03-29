@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { fadeInFrom, withMotion } from "../../utils/animations";
 import useZoom from "../../zoom";
-import { servicesData } from "./services";
+import { servicesData } from "../../ConstInfo/ProductionPageServices";
 import { ProductionCatalog } from "../../components/Organisms/ProductionCatalog";
 
 const MotionText = withMotion(Text);

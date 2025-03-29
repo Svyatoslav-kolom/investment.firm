@@ -1,7 +1,6 @@
-const BASE_URL = import.meta.env.BASE_URL || "/";
-const ICONS_PATH = "icons/ProductionIcons/";
+const ICONS_PATH = "./icons/ProductionIcons/";
 
-const getIconUrl = (fileName: string) => `${BASE_URL}${ICONS_PATH}${fileName}`;
+const getIconUrl = (fileName: string) => `${ICONS_PATH}${fileName}`;
 
 export interface ServiceItem {
     title: string;

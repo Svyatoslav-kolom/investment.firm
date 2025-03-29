@@ -1,7 +1,6 @@
-const BASE_URL = import.meta.env.BASE_URL || "/";
-const IMAGES_PATH = "public/icons/problems/forLessors/";
+const IMAGES_PATH = "./icons/problems/forLessors/";
 
-const getImageUrl = (fileName: string) => `${BASE_URL}${IMAGES_PATH}${fileName}`;
+const getImageUrl = (fileName: string) => `${IMAGES_PATH}${fileName}`;
 
 export const problems = [
     {

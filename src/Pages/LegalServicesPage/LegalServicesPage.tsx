@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { LegalServiceCatalog } from "../../components/Organisms/LegalServiceCatalog";
-import { servicesData } from "./services";
+import { servicesData } from "../../ConstInfo/LegalServicesServices";
 import { fadeInFrom, withMotion } from "../../utils/animations";
 import useZoom from "../../zoom";
 import { AboutSection } from "../../components/Organisms/AboutSection";

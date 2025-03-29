@@ -2,9 +2,9 @@ import { Box, VStack, Text, Heading } from "@chakra-ui/react";
 import { InvestmentPoints } from "../../components/Molecules/InvestmentPoints";
 import { ImmovablesInfo } from "../../components/Molecules/ImmovablesInfo";
 import { BlueButton } from "../../components/Atoms/BlueButton";
-import { problems } from "./problems";
-import { investmentSteps } from "./investmentSteps";
-import { investmentBenefits } from "./investmentBenefits";
+import { problems } from "../../ConstInfo/ImmovablesForInvestmentsProblems";
+import { investmentSteps } from "../../ConstInfo/ImmovablesForInvestmentsInvestmentSteps";
+import { investmentBenefits } from "../../ConstInfo/ImmovablesForInvestmentsInvestmentBenefits";
 import { useNavigate } from "react-router-dom";
 import useZoom from "../../zoom";
 

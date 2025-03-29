@@ -1,7 +1,7 @@
 import { Box, Grid } from "@chakra-ui/react";
 import { FC } from "react";
 import { LegalServiceItem } from "../../Molecules/LegalServiceItem";
-import { ServiceItem } from "../../../Pages/LegalServicesPage/services";
+import { ServiceItem } from "../../../ConstInfo/LegalServicesServices";
 import { fadeInFrom, withMotion } from "../../../utils/animations";
 import { AboutSection } from "../AboutSection";
 
