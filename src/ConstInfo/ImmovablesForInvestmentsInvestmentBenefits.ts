@@ -1,26 +1,33 @@
-const IMAGES_PATH = "./icons/benefitsIcons/immovables/investments/";
+// Импортируем все изображения синхронно
+const images = import.meta.glob(
+    "../assets/icons/benefitsIcons/immovables/investments/*.svg",
+    { eager: true }
+) as Record<string, { default: string }>;
 
-const getImageUrl = (fileName: string) => `${IMAGES_PATH}${fileName}`;
-
-export const investmentBenefits = [
+// Описание преимуществ
+const benefitsData = [
     {
-        img: getImageUrl("1.svg"),
         title: "Высокий доход",
         description: "5–10% ежемесячно",
     },
     {
-        img: getImageUrl("2.svg"),
         title: "Гарантированная безопасность",
         description: "Фонд гарантии защищает ваши инвестиции",
     },
     {
-        img: getImageUrl("3.svg"),
         title: "Простота выхода",
         description: "Вы можете вернуть вложенные средства в любой момент без штрафов",
     },
     {
-        img: getImageUrl("4.svg"),
         title: "Минимальный порог входа",
         description: "Покупка доли от 1м² позволяет начать с небольших вложений",
     },
 ];
+
+// Преобразуем объект изображений в массив, сортируем и объединяем с описаниями
+export const investmentBenefits = Object.values(images)
+    .map(image => image.default) // Получаем пути к изображениям
+    .map((img, index) => ({
+        img,
+        ...benefitsData[index], // Подставляем соответствующий заголовок и описание
+    }));

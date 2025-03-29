@@ -1,21 +1,29 @@
-const IMAGES_PATH = "./icons/problems/forInvestments/";
+// Импортируем все изображения синхронно
+const images = import.meta.glob(
+    "../assets/icons/problems/forInvestments/*.svg",
+    { eager: true }
+) as Record<string, { default: string }>;
 
-const getImageUrl = (fileName: string) => `${IMAGES_PATH}${fileName}`;
-
-export const problems = [
+// Описание проблем (без изображений)
+const problemsData = [
     {
-        img: getImageUrl("1.svg"),
         title: "Неликвидность:",
         description: "Цены достигли максимума, и владельцы теряют значительные средства, не имея возможности продать свои объекты."
     },
     {
-        img: getImageUrl("2.svg"),
         title: "Отсутствие безопасных инвестиций:",
         description: "Инвесторы опасаются нестабильности и рисков, что делает рынок менее привлекательным."
     },
     {
-        img: getImageUrl("3.svg"),
         title: "Решение:",
         description: "Мы предлагаем инновационную модель, которая минимизирует риски и открывает новые горизонты для инвестиций."
     }
 ];
+
+// Создаём массив проблем, связывая изображения и описания
+export const problems = Object.values(images)
+    .map(image => image.default) // Получаем пути к изображениям
+    .map((img, index) => ({
+        img,
+        ...problemsData[index], // Подставляем заголовок и описание
+    }));

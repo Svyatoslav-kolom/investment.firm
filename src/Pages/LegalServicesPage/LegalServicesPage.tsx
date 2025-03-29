@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { LegalServiceCatalog } from "../../components/Organisms/LegalServiceCatalog";
-import { servicesData } from "../../ConstInfo/LegalServicesServices";
+import { servicesDataWithIcons } from "../../ConstInfo/LegalServicesServices";
 import { fadeInFrom, withMotion } from "../../utils/animations";
 import useZoom from "../../zoom";
 import { AboutSection } from "../../components/Organisms/AboutSection";
@@ -22,7 +22,7 @@ export const LegalServicesPage = () => {
         Наша команда профессиональных юристов предоставляет полный спектр юридических услуг в Турции — от регистрации бизнеса до получения гражданства. Мы поможем вам решить любые правовые вопросы, защитить ваши интересы и минимизировать риски на всех этапах.
       </MotionText>
 
-      <LegalServiceCatalog services={servicesData} />
+      <LegalServiceCatalog services={servicesDataWithIcons} />
 
       <Box height={{ base: "auto", md: "140px" }} mx={{ base: "20px", md: "none" }} mt={"50px"}>
         <AboutSection

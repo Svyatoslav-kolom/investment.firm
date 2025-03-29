@@ -1,20 +1,14 @@
-const ICONS_PATH = "./icons/legalServicesIcons/";
+// Импортируем все иконки синхронно
+const icons = import.meta.glob(
+    "../assets/icons/legalServicesIcons/*.svg",
+    { eager: true }
+) as Record<string, { default: string }>;
 
-const getIconUrl = (fileName: string) => `${ICONS_PATH}${fileName}`;
-
-export interface ServiceItem {
-    title: string;
-    icon: string;
-    descriptionTitle: string;
-    description: string[];
-}
-
-export const servicesData: ServiceItem[] = [
+// Описание услуг (без иконок)
+const servicesData = [
     {
         title: "ОФОРМЛЕНИЕ ВНЖ, ПМЖ И ГРАЖДАНСТВА",
-        icon: getIconUrl("1.svg"),
-        descriptionTitle:
-            "Мы поможем вам получить законный статус в Турции — от временного вида на жительство до гражданства:",
+        descriptionTitle: "Мы поможем вам получить законный статус в Турции — от временного вида на жительство до гражданства:",
         description: [
             "Выбор оптимального типа ВНЖ — Туристический, рабочий, инвестиционный и т. д.",
             "Подготовка и подача документов в миграционные службы Турции.",
@@ -24,7 +18,6 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "ЮРИДИЧЕСКАЯ ПОДДЕРЖКА БИЗНЕСА",
-        icon: getIconUrl("2.svg"),
         descriptionTitle: "Мы обеспечим вашему бизнесу надежную правовую защиту:",
         description: [
             "Регистрация компаний — ИП, ООО, АО и другие формы бизнеса.",
@@ -35,7 +28,6 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "ИММИГРАЦИОННОЕ И БЕЖЕНСКОЕ ПРАВО",
-        icon: getIconUrl("3.svg"),
         descriptionTitle: "Мы поможем оформить статус и защитить ваши права:",
         description: [
             "Оформление статуса беженца — Полное сопровождение и ведение процесса.",
@@ -45,7 +37,6 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "СДЕЛКИ С НЕДВИЖИМОСТЬЮ И АВТОМОБИЛЯМИ",
-        icon: getIconUrl("4.svg"),
         descriptionTitle: "Обеспечьте безопасность сделок с имуществом:",
         description: [
             "Покупка, продажа и аренда недвижимости — Полное сопровождение.",
@@ -56,7 +47,6 @@ export const servicesData: ServiceItem[] = [
     },
     {
         title: "СУДЕБНОЕ ПРЕДСТАВИТЕЛЬСТВО И ЗАЩИТА В ТУРЦИИ",
-        icon: getIconUrl("5.svg"),
         descriptionTitle: "Профессиональная защита ваших интересов в судах:",
         description: [
             "Ведение гражданских, уголовных и административных дел — Полное сопровождение в процессе.",
@@ -65,3 +55,11 @@ export const servicesData: ServiceItem[] = [
         ]
     }
 ];
+
+// Формируем финальный массив с услугами, связывая иконки и текстовые данные
+export const servicesDataWithIcons = Object.values(icons)
+    .map(image => image.default) // Получаем пути к иконкам
+    .map((icon, index) => ({
+        icon,
+        ...servicesData[index], // Добавляем заголовок, описание и описание услуги
+    }));
