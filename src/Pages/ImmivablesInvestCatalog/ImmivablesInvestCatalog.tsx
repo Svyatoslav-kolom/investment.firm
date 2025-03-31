@@ -6,7 +6,7 @@ export const ImmivablesInvestCatalog = () => {
   const zoom = useZoom();
   
   return (
-    <Box mt={{base:"70px", md: "200px"}} pb={{base:"20px", md: "80px"}} w="100%" zoom={zoom}>
+    <Box pb={{base:"20px", md: "80px"}} w="100%" zoom={zoom} mt={{ base: "80px", md: "100px" }}>
       <VStack color="#111111" gap={2} alignItems="start" pb="20px">
         <Heading textStyle="h1">
           Каталог недвижимости

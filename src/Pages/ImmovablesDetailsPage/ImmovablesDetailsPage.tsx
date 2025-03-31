@@ -11,7 +11,7 @@ export const ImmovablesDetailsPage = () => {
   const adjustedZoom = zoom ? zoom - 0.1 : 1;
 
   return (
-    <Box mt={{ base: "80px", md: "200px" }} zoom={adjustedZoom}>
+    <Box zoom={adjustedZoom} mt={{ base: "80px", md: "100px" }}>
       <VStack align="start">
         <VStack gap="10px" mb="20px">
           <Heading textStyle="h1">#69646431 Bridge loan - 1.stage (Lithuania)</Heading>

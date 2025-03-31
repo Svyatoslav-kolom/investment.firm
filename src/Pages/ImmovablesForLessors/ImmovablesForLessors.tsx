@@ -20,7 +20,7 @@ export const ImmovablesForLessors = () => {
       mx={{ base: "20px", md: "none" }}
     >
 
-      <Box px={{ base: "20px", md: "158px" }} mt={{ base: "40px", md: "140px" }} mb={{ base: "40px", md: "140px" }}>
+      <Box px={{ base: "20px", md: "158px" }} mb={{ base: "40px", md: "140px" }}>
         <Box
           height={{ base: "auto", md: "620px" }}
         >

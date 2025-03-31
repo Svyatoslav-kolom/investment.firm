@@ -7,7 +7,7 @@ import useZoom from "../../zoom";
 export const CommunityPage = () => {
   const zoom = useZoom();
   return (
-  <Box mb="180px" mt="60px" zoom={zoom}>
+  <Box mb="180px" zoom={zoom}>
 
     <Box justifySelf="end">
       <CommunityTitle />

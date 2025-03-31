@@ -10,7 +10,7 @@ const MotionText = withMotion(Text);
 export const LegalServicesPage = () => {
   const zoom = useZoom();
   return (
-    <Box mt="60px" zoom={zoom}>
+    <Box zoom={zoom}>
       <MotionText
         {...fadeInFrom("left")}
         w={{ base: "350px", md: "520px" }}

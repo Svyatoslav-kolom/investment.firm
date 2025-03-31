@@ -1,7 +1,7 @@
 import { Box, HStack, IconButton, Image } from "@chakra-ui/react";
-import {  LuX } from "react-icons/lu";
+import { LuX } from "react-icons/lu";
 import { HashLink } from "react-router-hash-link";
-import HeaderIcon from "../../../assets/icons/LuminaIcon.svg";
+import HeaderIcon from "../../../assets/icons/LuminaIcon.png";
 import { HeaderLinksMobile } from "../../Molecules/HeaderLinksMobile";
 import { BlueButton } from "../../Atoms/BlueButton";
 import { useState } from "react";
@@ -44,12 +44,12 @@ export const HeaderMobile: React.FC<HeaderProps> = ({ isHome }) => {
 
   return (
     <HStack
+      backdropFilter="blur(10px)"
       px={4}
-      py={3}
+      py={"25px"}
       justifyContent="space-between"
       alignItems="center"
       w="100%"
-      pt={"25px"}
       position="relative"
       id="mobile-header"
       animation={open ? `${backgroundFill} 0.5s forwards` : ""}

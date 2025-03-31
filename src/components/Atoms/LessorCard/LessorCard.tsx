@@ -1,6 +1,7 @@
 import { Box, VStack, Text, Stack, Image } from "@chakra-ui/react";
 import { BlueButton } from "../../Atoms/BlueButton";
 import { useNavigate } from "react-router-dom";
+import icon from "../../../assets/icons/location.svg";
 
 interface Props {
   property: {
@@ -41,7 +42,7 @@ export const LessorCard: React.FC<Props> = ({ property }) => {
       <VStack align="start" gap={2} mt={3}>
         <Text textStyle="h1" textTransform={"none"}>{property.title}</Text>
         <Stack direction={{ base: "column", md: "row" }} fontSize="sm">
-          <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
+          <Image src={icon} alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
           <Text>{property.area} м²</Text>
         </Stack>

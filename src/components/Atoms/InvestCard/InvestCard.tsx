@@ -1,5 +1,6 @@
 import { Box, VStack, Text, HStack, Image, Progress } from "@chakra-ui/react";
 import { BlueButton } from "../../Atoms/BlueButton";
+import icon from "../../../assets/icons/location.svg";
 
 interface Props {
   property: {
@@ -31,14 +32,14 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
     >
       <Box
         position="absolute"
-        top={{base:"5%", md:"65px"}}
-        left={{base:"10%", md:"65px"}}
+        top={{ base: "5%", md: "65px" }}
+        left={{ base: "10%", md: "65px" }}
         zIndex="2"
         borderRadius="full"
         backgroundColor={property.isReady ? "#DF0000" : "#1CA242"}
         color="white"
         fontSize="14px"
-        
+
         px="12px"
         py="4px"
         textAlign="center"
@@ -57,18 +58,19 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
       </Box>
 
       <VStack align="start" gap={2} mt={3}>
-        <Text textStyle="h2"  textTransform={"none"}>{property.title}</Text>
+        <Text textStyle="h2" textTransform={"none"}>{property.title}</Text>
         <HStack fontSize="sm">
-          <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
+          <Image src={icon} alt="Location" boxSize="15px" />
           <Text>{property.location}</Text>
           <Text>{property.area} м²</Text>
         </HStack>
       </VStack>
 
       <Text fontWeight="medium" mt={2}>Готовность проекта: {property.readiness}%</Text>
-      <Progress.Root value={property.readiness} w="100%" shape="rounded">
-        <Progress.Track>
-          <Progress.Range style={{ backgroundColor: "#0048B4" }} />
+
+      <Progress.Root value={property.readiness} w="100%" borderRadius="full" colorScheme="blue">
+        <Progress.Track borderRadius="full">
+          <Progress.Range style={{ backgroundColor: "#0048B4", borderRadius: "full" }} />
         </Progress.Track>
       </Progress.Root>
 

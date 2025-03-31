@@ -10,7 +10,7 @@ export const CarsDetailsPage = () => {
   const adjustedZoom = zoom ? zoom - 0.1 : 1;
 
   return (
-    <Box mt={{ base: "70px", md: "200px" }} zoom={adjustedZoom}>
+    <Box zoom={adjustedZoom}>
       <VStack>
         <VStack gap={{ base: "5px", md: "10px" }} mb={{ base: "10px", md: "20px" }} alignSelf={"start"}>
           <Heading textStyle="h1" alignSelf="start">

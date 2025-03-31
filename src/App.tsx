@@ -67,7 +67,7 @@ function App() {
       {TopComponent && <TopComponent />}
 
       {/* Контент с отступами */}
-      <Box px={{ base: "20px", md: "157px" }}>
+      <Box px={{ base: "20px", md: "157px" }} mt={{ base: "20px", md: "80px" }}>
         <Outlet />
       </Box>
 

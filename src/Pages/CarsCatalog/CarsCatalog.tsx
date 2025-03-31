@@ -20,7 +20,6 @@ export const CarsCatalog = () => {
   return (
     <Box zoom={adjustedZoom} position="relative">
       <HStack
-        mt={{ base: "70px", md: "90px" }}
         mb={{ base: "30px", md: "80px" }}
         justifyContent="space-between"
       >

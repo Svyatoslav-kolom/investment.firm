@@ -16,7 +16,7 @@ export const HomePage = () => {
       zoom={zoom}
     >
 
-      <VStack mt={150} mb={150} id="about" mx={{ base: "20px", md: "none" }}>
+      <VStack mb={150} id="about" mx={{ base: "20px", md: "none" }}>
         <AboutSection
           title="Lumina investment fund – это инвестиционная платформа, позволяющая инвестировать в объекты через механизм коллективных инвестиций"
           content={[

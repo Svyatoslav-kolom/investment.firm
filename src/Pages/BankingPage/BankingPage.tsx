@@ -16,7 +16,7 @@ export const BankingPage = () => {
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Box mb="180px" mt="60px" zoom={zoom}>
+    <Box mb="180px" zoom={zoom}>
       {/* Shared Text */}
       <Text
         maxW="620px"

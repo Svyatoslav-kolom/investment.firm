@@ -11,7 +11,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ isHome }) => (
   <HStack
     borderRadius="full"
-    backdropFilter={{ base: "none", md: "blur(10px)" }}
+    backdropFilter="blur(10px)"
     px={{ base: 4, md: 12 }}
     py={3}
     justifyContent="space-between"
