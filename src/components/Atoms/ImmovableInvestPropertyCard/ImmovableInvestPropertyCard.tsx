@@ -2,6 +2,7 @@ import { Box, Image, Text, VStack, Progress, HStack, AspectRatio } from "@chakra
 import React from "react";
 import { BlueButton } from "../BlueButton";
 import { useNavigate } from "react-router-dom";
+import icon from "../../../assets/icons/location.svg";
 
 type Props = {
   title: string;
@@ -43,7 +44,7 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
         <VStack align="start" gap={1}>
           <Text fontSize="lg">{title}</Text>
           <HStack fontSize="sm">
-            <Image src="/icons/location.svg" alt="Location" boxSize="15px" />
+            <Image src={icon} alt="Location" boxSize="15px" />
             <Text>{location}</Text>
             <Text>{area} м²</Text>
           </HStack>
