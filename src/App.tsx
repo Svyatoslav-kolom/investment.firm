@@ -20,6 +20,7 @@ import { HeaderMobile } from "./components/Organisms/HeaderMobile";
 import { useBreakpointValue } from "@chakra-ui/react";
 import { ProductionTop } from "./components/Top/ProductionTop";
 import { CarsCatalogTop } from "./components/Top/CarsCatalogTop";
+import { LegalTop } from "./components/Top/LegalTop";
 
 // Объект с Top-компонентами
 const topComponents: Record<string, React.FC> = {
@@ -41,10 +42,17 @@ const topComponents: Record<string, React.FC> = {
 function App() {
   const location = useLocation();
   const isMdOrLarger = useBreakpointValue({ base: false, md: true });
-  const TopComponent = 
-    location.pathname === "/auto/catalog" && !isMdOrLarger
-      ? null
-      : topComponents[location.pathname];
+
+  // Определяем Top-компонент в зависимости от пути
+  let TopComponent = null;
+
+  if (location.pathname === "/auto/catalog" && !isMdOrLarger) {
+    TopComponent = null;
+  } else if (location.pathname.startsWith("/legal")) {
+    TopComponent = LegalTop;
+  } else {
+    TopComponent = topComponents[location.pathname];
+  }
 
   return (
     <VStack m={0} p={0} overflowX="hidden">
@@ -63,21 +71,21 @@ function App() {
         )}
       </Box>
 
-      {/* Отображение нужного Top-компонента */}
+      {/* Отображение Top-компонента */}
       {TopComponent && <TopComponent />}
 
-      {/* Контент с отступами */}
+      {/* Контент */}
       <Box px={{ base: "20px", md: "157px" }} mt={{ base: "20px", md: "80px" }}>
         <Outlet />
       </Box>
 
       {/* Footer */}
-      <Box w="100vw" px={{ base: "20px", md: "157px" }} id="footer" >
+      <Box w="100vw" px={{ base: "20px", md: "157px" }} id="footer">
         <Footer />
       </Box>
 
       {/* Footer Bottom */}
-      <Box mt={{ base: "50px", md: "140px" }} w="100vw" >
+      <Box mt={{ base: "50px", md: "140px" }} w="100vw">
         <FooterBottom />
       </Box>
     </VStack>

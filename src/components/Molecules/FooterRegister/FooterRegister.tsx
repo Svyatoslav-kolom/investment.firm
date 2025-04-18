@@ -16,6 +16,7 @@ export const FooterRegister = () => (
       h={{ base: "50px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
       textStyle="t1"
     />
+
     <Input
       placeholder="Телефон"
       bg="gray.100"
@@ -27,7 +28,11 @@ export const FooterRegister = () => (
     />
 
     <Box h="70px">
-      <BlueButton title="Перезвоните мне" />
+      <BlueButton
+        title="Перезвоните мне"
+        height={{ base: "50px", md: "30px", lg: "40px", xl: "45px", "2xl": "70px" }}
+        fs={{ base: "14px", md: "20px"}}
+      />
     </Box>
   </VStack>
 );

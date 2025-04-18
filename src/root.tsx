@@ -21,8 +21,20 @@ import { CarsCatalog } from "./Pages/CarsCatalog";
 import { CarsDetailsPage } from "./Pages/CarsDetailsPage";
 import { CarsForInvestments } from "./Pages/CarsForInvestments";
 import { CarsForLessors } from "./Pages/CarsForLessors";
-import { Box } from "@chakra-ui/react";
 
+// Legal Pages
+import { ShareTermsPage } from "./Pages/Legal/ShareTermsPage";
+import { PrivacyPolicyPage } from "./Pages/Legal/PrivacyPolicyPage";
+import { UserAgreementPage } from "./Pages/Legal/UserAgreementPage";
+import { ExitPolicyPage } from "./Pages/Legal/ExitPolicyPage";
+import { AmlPolicyPage } from "./Pages/Legal/AmlPolicyPage";
+import { ReferralTermsPage } from "./Pages/Legal/ReferralTermsPage";
+import { InvestmentSafetyPage } from "./Pages/Legal/InvestmentSafetyPage";
+import { AboutLegalPage } from "./Pages/Legal/AboutLegalPage";
+import { FaqPage } from "./Pages/Legal/FaqPage";
+import { LuminaClubPage } from "./Pages/Legal/LuminaClubPage";
+
+import { Box } from "@chakra-ui/react";
 
 import { ScrollToTop } from "./ScrollToTop";
 import { ScrollToAnchor } from "./ScrollToAnchor";
@@ -57,6 +69,19 @@ export function Root() {
           <Route path="/auto/details" element={<CarsDetailsPage />} />
           <Route path="/auto/forInvestments" element={<CarsForInvestments />} />
           <Route path="/auto/forLessors" element={<CarsForLessors />} />
+
+          {/* Юридические страницы */}
+          <Route path="/legal/share-terms" element={<ShareTermsPage />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/legal/user-agreement" element={<UserAgreementPage />} />
+          <Route path="/legal/exit-policy" element={<ExitPolicyPage />} />
+          <Route path="/legal/aml-policy" element={<AmlPolicyPage />} />
+          <Route path="/legal/referral-terms" element={<ReferralTermsPage />} />
+          <Route path="/legal/investment-safety" element={<InvestmentSafetyPage />} />
+          <Route path="/legal/about" element={<AboutLegalPage />} />
+          <Route path="/legal/faq" element={<FaqPage />} />
+          <Route path="/legal/club" element={<LuminaClubPage />} />
+          
         </Route>
       </Routes>
     </>

@@ -32,6 +32,7 @@ export const ImmovablesInfo: FC<Props> = ({ title, info, wrapId }) => {
         alignSelf={"start"}
         textStyle="h2"
         textTransform="uppercase"
+        w={{ base: "100%", md: "500px" }}
       >
         {title}
       </MotionText>

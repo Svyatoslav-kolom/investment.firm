@@ -3,6 +3,7 @@ import { FC } from "react";
 import { BlueRectangleType } from "../../../Types/BlueRectangleType";
 import { BlueRectangle } from "../../Atoms/BlueRectangle";
 import { fadeInFrom, withMotion } from "../../../utils/animations";
+import firstCard from "../../../assets/blueRectangleFirst.svg";
 
 const MotionStack = withMotion(Stack);
 
@@ -23,8 +24,9 @@ export const InvestmentPoints: FC<Props> = ({ info }) => {
         <Box
           w={{ base: "100%", md: "510px" }}
           h="350px"
-          bg="#DDEAFF"
-          borderRadius="3xl"
+          bgImage={`url(${firstCard})`}
+          bgSize="cover"
+          borderRadius="3xl" 
           p="40px"
           gap="50px"
           color="#0D0D0D"

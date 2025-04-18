@@ -4,7 +4,7 @@ interface BlueButtonProps {
   title: string;
   onClick?: () => void;
   variant?: "solid" | "outline" | "light";
-  fs?: string;
+  fs?: any;
   height?: any; // Сделаем height адаптивным
 }
 

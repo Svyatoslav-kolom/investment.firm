@@ -12,6 +12,7 @@ export const Header: React.FC<HeaderProps> = ({ isHome }) => (
   <HStack
     borderRadius="full"
     backdropFilter="blur(10px)"
+    bg={"rgba(255, 255, 255, 0.3)"}
     px={{ base: 4, md: 12 }}
     py={3}
     justifyContent="space-between"

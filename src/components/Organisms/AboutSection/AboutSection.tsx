@@ -7,7 +7,7 @@ const MotionVStack = withMotion(VStack);
 
 interface AboutProps {
   title: string;
-  content: ReactNode[];  // изменен тип на ReactNode[]
+  content: ReactNode[];
 }
 
 export const AboutSection: FC<AboutProps> = ({ title, content }) => {

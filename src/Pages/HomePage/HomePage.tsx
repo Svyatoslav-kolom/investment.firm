@@ -13,10 +13,14 @@ export const HomePage = () => {
     <Box
       display="flex"
       flexDirection="column"
+      gap={{ base: "60px", md: "150px" }}
       zoom={zoom}
+      mx={{ base: "0", md: "-20px" }}
     >
 
-      <VStack mb={150} id="about" mx={{ base: "20px", md: "none" }}>
+      <VStack id="about"
+        mx={{ base: "20px", md: 0, "2xl": "137px" }}
+      >
         <AboutSection
           title="Lumina investment fund – это инвестиционная платформа, позволяющая инвестировать в объекты через механизм коллективных инвестиций"
           content={[
@@ -26,24 +30,14 @@ export const HomePage = () => {
         />
       </VStack>
 
-      <Box id="projects" mx={{ base: "20px", md: "none" }}>
+      <Box id="projects"
+        mx={{ base: "20px", md: 0, "2xl": "137px" }}
+      >
         <Projects />
       </Box>
 
       <Box
-        mb="309px"
-        id="howToInvest"
-      >
-        <HowToInvest />
-      </Box>
-
-      <Box maxW="100vw" >
-        <HowItWorks />
-      </Box>
-
-      <Box
-        mt="150px"
-        mx={{ base: "20px", md: "none" }}
+        mx={{ base: "20px", md: 0, "2xl": "137px" }}
       >
         <AboutSection
           title="Почему инвестировать с Lumina investment fund  выгодно и безопасно?"
@@ -53,6 +47,21 @@ export const HomePage = () => {
             "Инвестировать можно начиная с суммы, эквивалентной 1 м², что делает коммерческую недвижимость доступной для широкой аудитории.",
           ]}
         />
+      </Box>
+
+      <Box
+        mb="100px"
+        id="howToInvest"
+        mx={{ base: "20px", md: 0, "2xl": "137px" }}
+      >
+        <HowToInvest />
+      </Box>
+
+      <Box
+        maxW="100vw"
+        px={{ base: "20px", md: 0, "2xl": "137px" }}
+      >
+        <HowItWorks />
       </Box>
 
     </Box>

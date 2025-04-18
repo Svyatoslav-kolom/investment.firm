@@ -17,7 +17,7 @@ export const ImmovablesForLessors = () => {
       alignItems="center"
       justifyContent="center"
       zoom={zoom}
-      mx={{ base: "20px", md: "none" }}
+      mx="100px"
     >
 
       <Box px={{ base: "20px", md: "158px" }} mb={{ base: "40px", md: "140px" }}>

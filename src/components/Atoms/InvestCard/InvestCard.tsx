@@ -27,7 +27,6 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
       pb={{ base: "25px", md: "50px" }}
       boxShadow="0px 4px 4px 0px #00000040"
       borderRadius={{ base: "30px", md: "50px" }}
-      border="1px solid #00000040"
       position="relative"
     >
       <Box

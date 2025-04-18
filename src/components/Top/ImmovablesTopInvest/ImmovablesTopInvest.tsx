@@ -32,7 +32,7 @@ export const ImmovablesTopInvest = () => {
       />
 
 
-      <Box w={{ base: "100%", md: "515px" }} h="71px" alignSelf="end" mt="25px">
+      <Box w={{base:"100%", md:"33%"}} h="71px" alignSelf="end" mt="25px">
         <BlueButton title={"Смотреть объекты"} fs="t2" onClick={() => navigate("/immovables/forInvestments/catalog")} />
       </Box>
 
