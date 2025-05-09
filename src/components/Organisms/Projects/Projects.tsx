@@ -10,7 +10,7 @@ export const Projects = () => {
   return (
     <VStack textAlign="center" py={10} width="100%" align="center">
       <Heading textStyle="h1" alignSelf="start" pb={11}>
-        проекты
+        Услуги
       </Heading>
 
       <VStack
@@ -19,7 +19,7 @@ export const Projects = () => {
         width="100%"
         align="center"
       >
-        {projects.slice(0, 7).map((project, index) => {
+        {projects.map((project, index) => {
           const isEvenRow = index >= 3;
           const direction = isEvenRow ? "left" : "left"; 
 
@@ -56,7 +56,7 @@ export const Projects = () => {
         w="100%"
         display={{ base: "none", md: "grid" }} // Hide Grid on mobile, show on larger screens
       >
-        {projects.slice(0, 6).map((project, index) => {
+        {projects.map((project, index) => {
           const isEvenRow = index >= 3;
           const direction = isEvenRow ? "left" : "left"; // Determine animation direction
 
@@ -71,9 +71,9 @@ export const Projects = () => {
           );
         })}
 
-        <MotionGridItem
+        {/* <MotionGridItem
           colSpan={1}
-          {...fadeInFrom("left")} // Assuming you want a 'bottom' animation for the last item
+          {...fadeInFrom("left")}
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <ProjectComponent project={projects[6]} />
@@ -81,11 +81,11 @@ export const Projects = () => {
 
         <MotionGridItem
           colSpan={2}
-          {...fadeInFrom("left")} // Assuming you want a 'bottom' animation for the last item
+          {...fadeInFrom("left")}
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <ProjectComponent project={projects[7]} aspectRatio={1058 / 358} />
-        </MotionGridItem>
+        </MotionGridItem> */}
       </Grid>
     </VStack>
   );

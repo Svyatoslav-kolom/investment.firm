@@ -38,6 +38,7 @@ import { Box } from "@chakra-ui/react";
 
 import { ScrollToTop } from "./ScrollToTop";
 import { ScrollToAnchor } from "./ScrollToAnchor";
+import { AboutUs } from "./Pages/AboutUs";
 
 export function Root() {
   return (
@@ -50,6 +51,7 @@ export function Root() {
 
           {/* Базовые страницы */}
           <Route path="/consulting" element={<ConsultingPage />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/banking" element={<BankingPage />} />
           <Route path="/entrepreneurs-community" element={<CommunityPage />} />
           <Route path="/legal-services" element={<LegalServicesPage />} />

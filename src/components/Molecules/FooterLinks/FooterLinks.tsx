@@ -15,8 +15,8 @@ export const FooterLinks = () => {
 
         <VStack align="flex-start" gap={3}>
           <Text mb={3}>Полезные ссылки</Text>
-          <RouterLink to="/#about">О нас</RouterLink>
-          <RouterLink to="/#projects">Проекты</RouterLink>
+          <RouterLink to="/aboutUs">О нас</RouterLink>
+          <RouterLink to="/#projects">Услуги</RouterLink>
           <RouterLink to="/#howToInvest">Как инвестировать</RouterLink>
           <RouterLink to="/#contact">Контакты</RouterLink>
           <RouterLink to="/#invest">Как инвестировать</RouterLink>
@@ -24,10 +24,16 @@ export const FooterLinks = () => {
 
         <VStack align="flex-start" gap={3}>
           <Text mb={3}>Юридический</Text>
-          <RouterLink to="/#terms">Условия использования</RouterLink>
-          <RouterLink to="/#privacy">Политика конфиденциальности</RouterLink>
-          <RouterLink to="/#credit-terms">Общие условия кредитования</RouterLink>
-          <RouterLink to="/#conflict-policy">Политика в отношении конфликта интересов</RouterLink>
+          <RouterLink to="/legal/user-agreement">Пользовательское соглашение</RouterLink>
+          <RouterLink to="/legal/privacy-policy">Политика конфиденциальности</RouterLink>
+          <RouterLink to="/legal/share-terms">Общие условия приобретения доли</RouterLink>
+          <RouterLink to="/legal/referral-terms">Условия участия в реферальной программе</RouterLink>
+          <RouterLink to="/legal/exit-policy">Условия возврата и выхода из проекта</RouterLink>
+          <RouterLink to="/legal/aml-policy">AML Политика</RouterLink>
+          <RouterLink to="/legal/investment-safety">Безопасность инвестиций</RouterLink>
+          <RouterLink to="/legal/about">О юридическом отделе</RouterLink>
+          <RouterLink to="/legal/faq">FAQ</RouterLink>
+          <RouterLink to="/legal/club">Клуб Lumina</RouterLink>
         </VStack>
       </Grid>
     </Box>

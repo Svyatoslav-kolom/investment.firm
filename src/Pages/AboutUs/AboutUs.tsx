@@ -7,7 +7,7 @@ import useZoom from "../../zoom";
 import { ImmovablesTopInvest } from "../../components/Top/ImmovablesTopInvest";
 
 
-export const HomePage = () => {
+export const AboutUs = () => {
   const zoom = useZoom();
 
   return (
@@ -52,7 +52,6 @@ export const HomePage = () => {
       <Box
         maxW="100vw"
         px={{ base: "20px", md: 0, "2xl": "137px" }}
-        w="100%"
       >
         <HowItWorks />
       </Box>

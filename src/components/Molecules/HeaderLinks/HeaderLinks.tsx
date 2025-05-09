@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const links = [
   { text: "О нас", to: "/#about" },
-  { text: "Проекты", to: "/#projects" },
+  { text: "Услуги", to: "/#projects" },
   { text: "Команда", to: "/#team" },
   { text: "Контакты", to: "/#footer" },
 ];

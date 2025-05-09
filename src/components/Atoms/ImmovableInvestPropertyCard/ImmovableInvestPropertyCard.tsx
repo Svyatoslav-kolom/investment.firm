@@ -3,29 +3,21 @@ import React from "react";
 import { BlueButton } from "../BlueButton";
 import { useNavigate } from "react-router-dom";
 import icon from "../../../assets/icons/location.svg";
+import { HouseType } from "../../../Types/HouseType";
 
-type Props = {
-  title: string;
-  location: string;
-  area: number;
-  price: number;
-  monthlyIncome: number;
-  minInvestment: number;
-  imageUrl: string;
-  projectReadiness: number;
-};
+type Props = HouseType;
 
 export const ImmovableInvestPropertyCard: React.FC<Props> = ({
-  title,
-  location,
-  area,
+  name,
+  city,
+  square,
   price,
-  monthlyIncome,
-  minInvestment,
-  imageUrl,
-  projectReadiness,
+  pricemon,
+  priceforinvest,
+  image,
+  ready,
 }) => {
-  const validatedReadiness = Math.min(100, Math.max(0, projectReadiness));
+  const validatedReadiness = Math.min(100, Math.max(0, ready * 100));
 
   const navigate = useNavigate();
 
@@ -42,17 +34,17 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
     >
       <VStack gap={3} align="stretch">
         <VStack align="start" gap={1}>
-          <Text fontSize="lg">{title}</Text>
+          <Text fontSize="lg">{name}</Text>
           <HStack fontSize="sm">
             <Image src={icon} alt="Location" boxSize="15px" />
-            <Text>{location}</Text>
-            <Text>{area} м²</Text>
+            <Text>{city}</Text>
+            <Text>{square} м²</Text>
           </HStack>
         </VStack>
 
         <HStack gap={4} fontSize="12px">
           <AspectRatio ratio={16 / 9} w="100%" flex={1}>
-            <Image src={imageUrl} alt={title} borderRadius="md" objectFit="cover" />
+            <Image src={image} alt={name} borderRadius="md" objectFit="cover" />
           </AspectRatio>
 
           <VStack align="start" justifyContent="space-between" maxHeight="100%">
@@ -63,10 +55,9 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
               </Progress.Track>
             </Progress.Root>
 
-            {[
-              { label: "Стоимость:", value: `${price.toLocaleString()} $` },
-              { label: "Ежемесячная доходность:", value: `${monthlyIncome}%`, color: "blue.600" },
-              { label: "Минимальный порог входа:", value: `от ${minInvestment.toLocaleString()} $` },
+            {[{ label: "Стоимость:", value: `${price.toLocaleString()} $` },
+              { label: "Ежемесячная доходность:", value: `${pricemon}%`, color: "blue.600" },
+              { label: "Минимальный порог входа:", value: `от ${priceforinvest.toLocaleString()} $` },
             ].map(({ label, value, color }) => (
               <Box key={label}>
                 <Text fontWeight="medium">{label}</Text>
