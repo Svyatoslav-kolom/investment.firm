@@ -4,8 +4,8 @@ import { PropertySlider } from "../../Molecules/PropertySlider";
 import { ImmovableInvestPropertyCard } from "../../Atoms/ImmovableInvestPropertyCard";
 import { BlueButton } from "../../Atoms/BlueButton";
 import { useNavigate } from "react-router-dom";
-import { fetchInvestProperties } from "../../../api/immovables";
 import { HouseType } from "../../../Types/HouseType";
+import { fetchInvestProperties } from "../../../api/house";
 
 type Props = {
   headingColor?: string; // Добавляем пропс для цвета заголовка

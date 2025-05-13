@@ -8,6 +8,7 @@ import { HouseType } from "../../../Types/HouseType";
 type Props = HouseType;
 
 export const ImmovableInvestPropertyCard: React.FC<Props> = ({
+  id,
   name,
   city,
   square,
@@ -17,7 +18,8 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
   image,
   ready,
 }) => {
-  const validatedReadiness = Math.min(100, Math.max(0, ready * 100));
+  const validatedReadiness = Math.min(100, Math.max(0, (ready ?? 0) * 100));
+  const pricePercent = (pricemon ?? 0) / 100;
 
   const navigate = useNavigate();
 
@@ -55,9 +57,19 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
               </Progress.Track>
             </Progress.Root>
 
-            {[{ label: "Стоимость:", value: `${price.toLocaleString()} $` },
-              { label: "Ежемесячная доходность:", value: `${pricemon}%`, color: "blue.600" },
-              { label: "Минимальный порог входа:", value: `от ${priceforinvest.toLocaleString()} $` },
+            {[{
+              label: "Стоимость:",
+              value: `${(price ?? 0).toLocaleString()} $`
+            },
+            {
+              label: "Ежемесячная доходность:",
+              value: `${pricePercent}%`,
+              color: "blue.600"
+            },
+            {
+              label: "Минимальный порог входа:",
+              value: `от ${(priceforinvest ?? 0).toLocaleString()} $`
+            },
             ].map(({ label, value, color }) => (
               <Box key={label}>
                 <Text fontWeight="medium">{label}</Text>
@@ -65,7 +77,12 @@ export const ImmovableInvestPropertyCard: React.FC<Props> = ({
               </Box>
             ))}
 
-            <BlueButton title="Подробнее" variant="outline" fs="13px" onClick={() => navigate("/immovables/details")} />
+            <BlueButton
+              title="Подробнее"
+              variant="outline"
+              fs="13px"
+              onClick={() => navigate(`/immovables/details/${id}`)}
+            />
           </VStack>
         </HStack>
       </VStack>

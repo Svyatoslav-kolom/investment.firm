@@ -59,7 +59,7 @@ export function Root() {
 
           {/* Недвижимость */}
           <Route path="/immovables" element={<Box />} />
-          <Route path="/immovables/details" element={<ImmovablesDetailsPage />} />
+          <Route path="/immovables/details/:id" element={<ImmovablesDetailsPage />} />
           <Route path="/immovables/forLessors" element={<ImmovablesForLessors />} />
           <Route path="/immovables/forLessors/catalog" element={<ImmivablesLessorCatalog />} />
           <Route path="/immovables/forInvestments" element={<ImmovablesForInvestments />} />
@@ -68,7 +68,7 @@ export function Root() {
           {/* Авто */}
           <Route path="/auto" element={<Box />} />
           <Route path="/auto/catalog" element={<CarsCatalog />} />
-          <Route path="/auto/details" element={<CarsDetailsPage />} />
+          <Route path="/auto/details/:id" element={<CarsDetailsPage />} />
           <Route path="/auto/forInvestments" element={<CarsForInvestments />} />
           <Route path="/auto/forLessors" element={<CarsForLessors />} />
 

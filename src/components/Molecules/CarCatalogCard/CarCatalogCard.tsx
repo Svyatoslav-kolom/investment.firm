@@ -6,22 +6,25 @@ import speedometerIcon from "../../../assets/icons/speedometer.svg";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
+  id: number;
   title: string;
   price: number;
   horsePower: number;
-  volume: string;
+  volume: number;
   imageUrl: string;
 };
 
 export const CarCatalogCard: React.FC<Props> = ({
+  id,
   title,
   price,
   horsePower,
   volume,
   imageUrl,
 }) => {
-
   const navigate = useNavigate();
+
+  const goToDetails = () => navigate(`/auto/details/${id}`);
 
   return (
     <Box
@@ -34,13 +37,20 @@ export const CarCatalogCard: React.FC<Props> = ({
       height="100%"
     >
       <VStack gap={3} align="stretch">
-        <Image src={imageUrl} alt={title} borderRadius="md" flex={1} w="100%" objectFit="contain" />
+        <Image
+          src={imageUrl}
+          alt={title}
+          borderRadius="md"
+          flex={1}
+          w="100%"
+          objectFit="contain"
+        />
 
         <Text textStyle="h3">{title}</Text>
 
         <HStack gap={4} textStyle="t1">
           <Image src={engineIcon} />
-          <Text textStyle="t2">{volume} л/бензин</Text>
+          <Text textStyle="t2">{volume} л / бензин</Text>
         </HStack>
 
         <HStack justifyContent="space-between">
@@ -49,11 +59,18 @@ export const CarCatalogCard: React.FC<Props> = ({
             <Text textStyle="t2">{horsePower} л.с.</Text>
           </HStack>
 
-          <Text textStyle={{base:"h3", md:"t3"}}>от {price} $/cут</Text>
+          <Text textStyle={{ base: "h3", md: "t3" }}>
+            от {price} $ / сутки
+          </Text>
         </HStack>
 
-        <BlueButton title="Подробнее" variant="outline" fs="t2" onClick={() => navigate("/auto/details")} />
-        <BlueButton title="Арендовать" fs="t2" onClick={() => navigate("/auto/details")} />
+        <BlueButton
+          title="Подробнее"
+          variant="outline"
+          fs="t2"
+          onClick={goToDetails}
+        />
+        <BlueButton title="Арендовать" fs="t2" onClick={goToDetails} />
       </VStack>
     </Box>
   );

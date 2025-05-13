@@ -1,54 +1,63 @@
 import { Box, Text, Progress, Stack, Flex } from "@chakra-ui/react";
+import { HouseType } from "../../../Types/HouseType";
 
-// Кастомный компонент для строки
-const Row = ({ label, value, isLongText = false }: { label: string; value: string; isLongText?: boolean }) => (
-  <Flex justify="space-between" align={isLongText ? "flex-start" : "center"}>
+const Row = ({ label, value }: { label: string; value: string }) => (
+  <Flex justify="space-between" align="flex-start">
     <Text whiteSpace="nowrap">{label}</Text>
-    <Text fontWeight="medium" ml={isLongText ? 10 : 0}>
-      {value}
-    </Text>
+    <Text fontWeight="medium">{value}</Text>
   </Flex>
 );
 
-export const LoanTerms = () => {
-  // Данные для отображения
+export const LoanTerms = ({ property }: { property: HouseType }) => {
+  const {
+    country,
+    investors = 0,
+    price, // цільова сума
+    priceforinvest, // мінімальна сума
+    procentza,
+    procentin,
+    procentlumina,
+    term,
+    ready,
+  } = property;
+
+  const formattedInvestors = investors.toLocaleString("ru-RU");
+  const formattedTarget = price ? `€${price.toLocaleString("ru-RU")}` : "—";
+  const formattedMin = priceforinvest ? `€${priceforinvest.toLocaleString("ru-RU")}` : "—";
+  const formattedBorrower = procentza ? `${procentza}%` : "—";
+  const formattedInvestor = procentin ? `${procentin}%` : "—";
+  const formattedBonus = procentlumina ? `${procentlumina}%` : "—";
+  const formattedTerm = term ? `${term} месяцев` : "—";
+  const formattedLTV = "до 65%"; // якщо LTV динамічне — замінимо
+
+  const progressPercent = ready ? Math.round(ready * 100) : 0;
+
   const terms = [
-    { label: "Страна:", value: "Турция" },
-    { label: "Инвесторов:", value: "1,033" },
-    { label: "Целевая сумма:", value: "€120,900" },
-    { label: "Минимальная сумма:", value: "€50,000" },
-    { label: "Процент заемщика:", value: "10.5%" },
-    { label: "Процент инвестора:", value: "9%" },
-    { label: "Надбавка Lumina:", value: "1.5%" },
-    { label: "Срок займа:", value: "12 месяцев" },
-    { label: "Тип погашения:", value: "Единовременный платеж в конце срока займа", isLongText: true },
-    { label: "Выплата процентов:", value: "Регулярные выплаты согласно графику", isLongText: true },
-    { label: "Частота выплат:", value: "Ежеквартально" },
-    { label: "Мин. период процентов:", value: "0 месяцев" },
-    { label: "Уровень возврата:", value: "Минимальная доходность рассчитывается на основе общей площади продаваемых единиц", isLongText: true },
-    { label: "LTV (отношение займа к стоимости):", value: "65%" },
-    { label: "Прогнозируемое LTV:", value: "до 65%" },
-    { label: "Цель займа:", value: "Используется для высвобождения капитала на период продажи.", isLongText: true },
+    { label: "Страна:", value: country || "—" },
+    { label: "Инвесторов:", value: formattedInvestors },
+    { label: "Целевая сумма:", value: formattedTarget },
+    { label: "Минимальная сумма:", value: formattedMin },
+    { label: "Процент заемщика:", value: formattedBorrower },
+    { label: "Процент инвестора:", value: formattedInvestor },
+    { label: "Надбавка Lumina:", value: formattedBonus },
+    { label: "Срок займа:", value: formattedTerm },
+    { label: "Частота выплат:", value: "Ежеквартально" }, // якщо буде з бекенду — замінимо
+    { label: "Прогнозируемое LTV:", value: formattedLTV },
   ];
 
   return (
-    <Box height="100%" textStyle="t2" maxH="1000px">
-      {/* Готовность проекта */}
-      <Text mb={2}>
-        Готовность проекта: 55%
-      </Text>
+    <Box height="100%" textStyle="t2" maxH="1000px" w="100%">
+      <Text mb={2}>Готовность проекта: {progressPercent}%</Text>
 
-      {/* Прогресс бар */}
-      <Progress.Root value={55} w="100%" borderRadius="full" colorScheme="blue">
+      <Progress.Root value={progressPercent} w="100%" borderRadius="full" colorScheme="blue">
         <Progress.Track borderRadius="full">
           <Progress.Range style={{ backgroundColor: "#0048B4", borderRadius: "full" }} />
         </Progress.Track>
       </Progress.Root>
 
-      {/* Контент */}
-      <Stack gap={4} h="100%" mt={3}>
+      <Stack gap={4} h="100%" mt={3} w="100%">
         {terms.map((item, idx) => (
-          <Row key={idx} label={item.label} value={item.value} isLongText={item.isLongText} />
+          <Row key={idx} label={item.label} value={item.value} />
         ))}
       </Stack>
     </Box>

@@ -1,27 +1,40 @@
 import { Box, VStack, Text, HStack, Image, Progress } from "@chakra-ui/react";
 import { BlueButton } from "../../Atoms/BlueButton";
 import icon from "../../../assets/icons/location.svg";
+import { HouseType } from "../../../Types/HouseType";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
-  property: {
-    id: number;
-    title: string;
-    isReady: boolean;
-    location: string;
-    area: number;
-    readiness: number;
-    price: number;
-    monthlyIncome: number;
-    minEntry: number;
-    purchased: number;
-    image: string;
-  };
+  property: HouseType;
 }
 
 export const InvestCard: React.FC<Props> = ({ property }) => {
+  const {
+    id,
+    name,
+    image,
+    city,
+    country,
+    square,
+    ready,
+    price,
+    pricemon,
+    priceforinvest,
+    investedmoney,
+    status,
+  } = property;
+
+  const location = [country, city].filter(Boolean).join(", ");
+  const readiness = ready ? Math.round(ready * 100) : 0;
+  const purchased = investedmoney ?? 0;
+  const totalArea = square ?? 0;
+  const remaining = totalArea - purchased;
+
+  const navigate = useNavigate();
+
   return (
     <Box
-      key={property.id}
+      key={id}
       w="100%"
       p={{ base: "20px", md: "40px" }}
       pb={{ base: "25px", md: "50px" }}
@@ -35,39 +48,38 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         left={{ base: "10%", md: "65px" }}
         zIndex="2"
         borderRadius="full"
-        backgroundColor={property.isReady ? "#DF0000" : "#1CA242"}
+        backgroundColor={status ? "#DF0000" : "#1CA242"}
         color="white"
         fontSize="14px"
-
         px="12px"
         py="4px"
         textAlign="center"
       >
-        {property.isReady ? "Сбор завершен" : "Идет сбор средств"}
+        {status ? "Сбор завершен" : "Идет сбор средств"}
       </Box>
 
       <Box w="100%" borderRadius="md" overflow="hidden" position="relative">
         <Image
-          src={property.image}
-          alt={property.title}
+          src={image || ""}
+          alt={name}
           w="100%"
-          filter={property.isReady ? "grayscale(100%) brightness(0.7)" : "none"}
+          filter={status ? "grayscale(100%) brightness(0.7)" : "none"}
           transition="filter 0.3s ease"
         />
       </Box>
 
       <VStack align="start" gap={2} mt={3}>
-        <Text textStyle="h2" textTransform={"none"}>{property.title}</Text>
+        <Text textStyle="h2" textTransform="none">{name}</Text>
         <HStack fontSize="sm">
           <Image src={icon} alt="Location" boxSize="15px" />
-          <Text>{property.location}</Text>
-          <Text>{property.area} м²</Text>
+          <Text>{location}</Text>
+          {square !== undefined && <Text>{square} м²</Text>}
         </HStack>
       </VStack>
 
-      <Text fontWeight="medium" mt={2}>Готовность проекта: {property.readiness}%</Text>
+      <Text fontWeight="medium" mt={2}>Готовность проекта: {readiness}%</Text>
 
-      <Progress.Root value={property.readiness} w="100%" borderRadius="full" colorScheme="blue">
+      <Progress.Root value={readiness} w="100%" borderRadius="full" colorScheme="blue">
         <Progress.Track borderRadius="full">
           <Progress.Range style={{ backgroundColor: "#0048B4", borderRadius: "full" }} />
         </Progress.Track>
@@ -77,17 +89,17 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Стоимость:</Text>
-            <Text textStyle="t2">{property.price.toLocaleString()} $</Text>
+            <Text textStyle="t2">{price?.toLocaleString() ?? "-"} $</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Ежемесячная доходность:</Text>
-            <Text textStyle="t2" color="#0048B4" >{property.monthlyIncome}%</Text>
+            <Text textStyle="t2" color="#0048B4">{pricemon ?? "-"}%</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Мин. порог входа:</Text>
-            <Text textStyle="t2" >от {property.minEntry.toLocaleString()} $</Text>
+            <Text textStyle="t2">от {priceforinvest?.toLocaleString() ?? "-"} $</Text>
           </HStack>
         </VStack>
 
@@ -96,21 +108,28 @@ export const InvestCard: React.FC<Props> = ({ property }) => {
         <VStack w="100%" align="start">
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Выкуплено:</Text>
-            <Text textStyle="t2" >{property.purchased} м²</Text>
+            <Text textStyle="t2">{purchased} м²</Text>
           </HStack>
 
           <HStack justifyContent="space-between" w="100%">
             <Text fontWeight="medium">Осталось:</Text>
-            <Text textStyle="t2" color="#0048B4" >
-              {(property.area - property.purchased).toLocaleString()} м²
+            <Text textStyle="t2" color="#0048B4">
+              {remaining > 0 ? remaining.toLocaleString() : 0} м²
             </Text>
           </HStack>
         </VStack>
       </HStack>
 
       <HStack mt={4} flexDirection={{ base: "column", md: "row" }}>
-        <BlueButton title="Купить м²" />
-        <BlueButton title="Подробнее" variant="outline" />
+        <BlueButton 
+          title="Купить м²" 
+          onClick={() => navigate(`/immovables/details/${id}`)}
+          />
+        <BlueButton
+          title="Подробнее"
+          variant="outline"
+          onClick={() => navigate(`/immovables/details/${id}`)}
+        />
       </HStack>
     </Box>
   );
